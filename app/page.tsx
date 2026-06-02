@@ -1,12 +1,11 @@
 "use client";
 
-import ColorBends from "@/components/spacial-componets/color-blend/ColorBendsMain";
 import LightRays from "@/components/spacial-componets/light-ray/LightRayMain";
-import { Award, GraduationCap, Microscope, ShieldCheck } from "lucide-react";
-import { motion } from "framer-motion";
+import { Award } from "lucide-react";
+import { motion, Variants } from "framer-motion";
 
 const Home = () => {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -14,7 +13,7 @@ const Home = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
@@ -43,8 +42,6 @@ const Home = () => {
           saturation={1}
         />
 
-
- 
         <motion.div
           variants={containerVariants}
           initial="hidden"

@@ -20,13 +20,9 @@ import {
   Search,
   ShieldAlert,
   BookOpen,
-  FileCheck,
-  Building2,
   Shield,
-  Heart,
 } from "lucide-react";
 import { serviceSectors } from "@/data/layout/nav";
-import { Button } from "../ui/button";
 
 export default function Navbar() {
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
