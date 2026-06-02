@@ -3,6 +3,9 @@
 import LightRays from "@/components/spacial-componets/light-ray/LightRayMain";
 import { Award } from "lucide-react";
 import { motion, Variants } from "framer-motion";
+import BlurText from "@/components/spacial-componets/Blur-text/BlurText";
+import HomeFeature from "@/components/layout/section/home/HomeFeature";
+import HomeCapability from "@/components/layout/section/home/HomeCapability";
 
 const Home = () => {
   const containerVariants: Variants = {
@@ -14,10 +17,11 @@ const Home = () => {
   };
 
   const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 20, opacity: 0, filter: "blur(10px)" },
     visible: {
       y: 0,
       opacity: 1,
+      filter: "blur(0px)",
       transition: { duration: 0.8, ease: "easeOut" },
     },
   };
@@ -25,7 +29,7 @@ const Home = () => {
   return (
     <main className="bg-black text-white">
       {/* hero section  */}
-      <section className="h-[160vh] md:h-[130vh] lg:h-[110vh] relative">
+      <section className="h-[160vh] md:h-[130vh] lg:h-screen relative">
         <LightRays
           raysOrigin="bottom-center"
           raysColor="#0000FF"
@@ -66,14 +70,15 @@ const Home = () => {
             </span>
           </motion.h1>
 
-          <motion.p
-            variants={itemVariants}
-            className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
-          >
-            TSN Security provides world-class platform testing, validation, and
-            advanced training empowered by real-world case studies and elite
-            intelligence partnerships.
-          </motion.p>
+          <motion.div variants={itemVariants}>
+            <BlurText
+              text="TSN Security provides world-class platform testing, validation, and advanced training empowered by real-world case studies and elite intelligence partnerships."
+              delay={40}
+              animateBy="words"
+              direction="bottom"
+              className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed justify-center"
+            />
+          </motion.div>
 
           <motion.div
             variants={itemVariants}
@@ -88,6 +93,9 @@ const Home = () => {
           </motion.div>
         </motion.div>
       </section>
+
+      <HomeFeature />
+      <HomeCapability />
     </main>
   );
 };
