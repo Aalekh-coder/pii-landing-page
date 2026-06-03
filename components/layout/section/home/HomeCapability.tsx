@@ -121,7 +121,7 @@ const HomeCapability = () => {
 
 
       <BgGradient>
-        <div className="container mx-auto px-6 lg:mt-20">
+        <div className="container mx-auto px-6 mt-8 lg:mt-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Content Left */}
             <motion.div
@@ -149,17 +149,11 @@ const HomeCapability = () => {
                   whileTap={{ scale: 0.95 }}
                   className="relative px-8 py-4 bg-blue-600 text-white font-bold rounded-xl overflow-hidden group transition-colors hover:bg-blue-500"
                 >
-                  <span className="relative z-10">Get Started</span>
+                  <span className="relative z-10">Check Data</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] transition-transform" />
                 </motion.button>
 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-xl border border-white/10 backdrop-blur-sm transition-all"
-                >
-                  Read More
-                </motion.button>
+               
               </div>
             </motion.div>
 

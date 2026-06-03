@@ -6,6 +6,7 @@ import { motion, Variants } from "framer-motion";
 import BlurText from "@/components/spacial-componets/Blur-text/BlurText";
 import HomeFeature from "@/components/layout/section/home/HomeFeature";
 import HomeCapability from "@/components/layout/section/home/HomeCapability";
+import HomeAdvantage from "@/components/layout/section/home/HomeAdvantage";
 
 const Home = () => {
   const containerVariants: Variants = {
@@ -112,9 +113,9 @@ const Home = () => {
           </motion.div>
         </motion.div>
       </section>
-
       <HomeFeature />
       <HomeCapability />
+      <HomeAdvantage />
     </main>
   );
 };
