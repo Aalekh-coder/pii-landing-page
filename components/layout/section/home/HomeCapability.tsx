@@ -6,6 +6,7 @@ import SurfaceWebIllustration from "@/components/spacial-componets/svgs/WebSurfa
 import DeepWebIllustration from "@/components/spacial-componets/svgs/DeepWeb";
 import { deepWeb } from "@/data/home";
 import DarkWebHackerIcon from "@/components/spacial-componets/svgs/DarkWep";
+import HackerTerminal from "@/components/spacial-componets/svgs/DarkWep";
 
 const HomeCapability = () => {
   return (
@@ -163,7 +164,7 @@ const HomeCapability = () => {
             </motion.div>
 
             {/* Image Right */}
-            <DarkWebHackerIcon />
+            <HackerTerminal />
           </div>
         </div>
       </BgGradient>
