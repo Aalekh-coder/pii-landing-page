@@ -1,9 +1,7 @@
-import React from 'react'
+"use client";
 
 const HomeCapability = () => {
-  return (
-    <div>HomeCapability</div>
-  )
-}
+  return <div>HomeCapability</div>;
+};
 
-export default HomeCapability
+export default HomeCapability;
