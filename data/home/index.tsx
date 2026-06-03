@@ -264,3 +264,267 @@ export const intelligenceData = [
     features: ["DTH Info", "Gas Info", "Phishing"],
   },
 ];
+
+export const deepWeb = [
+  {
+    title: "Hidden Connections",
+    icon: (
+      <svg
+        width="64"
+        height="64"
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20 20L44 14M20 20L16 44M44 14L48 44M16 44L48 44"
+          stroke="#3B82F6"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+        />
+
+        <circle cx="20" cy="20" r="5" fill="#2563EB" />
+        <circle cx="44" cy="14" r="5" fill="#60A5FA" />
+        <circle cx="16" cy="44" r="5" fill="#60A5FA" />
+        <circle cx="48" cy="44" r="5" fill="#2563EB" />
+
+        <circle
+          cx="32"
+          cy="30"
+          r="4"
+          fill="#0F172A"
+          stroke="#60A5FA"
+          strokeWidth="2"
+          strokeDasharray="2 2"
+        />
+
+        <path
+          d="M20 20L32 30L44 14"
+          stroke="#60A5FA"
+          strokeWidth="1.5"
+          strokeDasharray="3 3"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Private Sources",
+    icon: (
+      <svg
+        width="64"
+        height="64"
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="20" cy="20" r="5" fill="#60A5FA" />
+        <circle cx="44" cy="20" r="5" fill="#60A5FA" />
+        <circle cx="32" cy="48" r="5" fill="#60A5FA" />
+
+        <path
+          d="M20 20L32 32L44 20"
+          stroke="#3B82F6"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+        />
+
+        <path
+          d="M32 32L32 48"
+          stroke="#3B82F6"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+        />
+
+        <rect
+          x="26"
+          y="26"
+          width="12"
+          height="10"
+          rx="2"
+          fill="#0F172A"
+          stroke="#3B82F6"
+          strokeWidth="2"
+        />
+
+        <path
+          d="M29 26V23C29 21.3 30.3 20 32 20C33.7 20 35 21.3 35 23V26"
+          stroke="#3B82F6"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Secure Discovery",
+    icon: (
+      <svg
+        width="64"
+        height="64"
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M32 12L46 18V28C46 38 40 46 32 50C24 46 18 38 18 28V18L32 12Z"
+          stroke="#3B82F6"
+          stroke-width="2.5"
+          fill="none"
+        />
+
+        <circle cx="30" cy="28" r="6" stroke="#60A5FA" stroke-width="2.5" />
+
+        <path
+          d="M35 33L40 38"
+          stroke="#60A5FA"
+          stroke-width="2.5"
+          stroke-linecap="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Deep Intelligence",
+    icon: (
+      <svg
+        width="64"
+        height="64"
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="32"
+          cy="32"
+          r="22"
+          stroke="#3B82F6"
+          stroke-width="2"
+          opacity="0.4"
+        />
+
+        <circle
+          cx="32"
+          cy="32"
+          r="14"
+          stroke="#60A5FA"
+          stroke-width="2"
+          opacity="0.7"
+        />
+
+        <circle cx="32" cy="32" r="5" fill="#60A5FA" />
+
+        <circle cx="32" cy="10" r="3" fill="#2563EB" />
+        <circle cx="54" cy="32" r="3" fill="#2563EB" />
+        <circle cx="32" cy="54" r="3" fill="#2563EB" />
+        <circle cx="10" cy="32" r="3" fill="#2563EB" />
+
+        <path
+          d="M32 13V27"
+          stroke="#60A5FA"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          d="M37 32H51"
+          stroke="#60A5FA"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          d="M32 37V51"
+          stroke="#60A5FA"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          d="M13 32H27"
+          stroke="#60A5FA"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Private Ecosystems",
+    icon: (
+      <svg
+        width="64"
+        height="64"
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="32" cy="32" r="22" stroke="#3B82F6" stroke-width="2.5" />
+
+        <circle cx="24" cy="24" r="4" fill="#60A5FA" />
+        <circle cx="40" cy="24" r="4" fill="#60A5FA" />
+        <circle cx="32" cy="40" r="4" fill="#60A5FA" />
+
+        <path
+          d="M24 24L40 24"
+          stroke="#60A5FA"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          d="M24 24L32 40"
+          stroke="#60A5FA"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          d="M40 24L32 40"
+          stroke="#60A5FA"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+
+        <circle
+          cx="32"
+          cy="32"
+          r="7"
+          fill="#0F172A"
+          stroke="#3B82F6"
+          stroke-width="2"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Quantum Security Interface",
+    icon: (
+     <svg
+  width="64"
+  height="64"
+  viewBox="0 0 64 64"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle cx="32" cy="32" r="18" stroke="#3B82F6" stroke-width="2"/>
+  <circle cx="32" cy="32" r="5" fill="#60A5FA"/>
+
+  <path
+    d="M32 16C41 16 48 23 48 32"
+    stroke="#60A5FA"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+
+  <path
+    d="M32 48C23 48 16 41 16 32"
+    stroke="#60A5FA"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+
+  <path
+    d="M32 22L38 24V30C38 34 35 37 32 39C29 37 26 34 26 30V24L32 22Z"
+    fill="#0F172A"
+    stroke="#60A5FA"
+    stroke-width="2"
+  />
+</svg>
+    ),
+  },
+];

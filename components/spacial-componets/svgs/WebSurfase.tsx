@@ -17,7 +17,7 @@ const nodes = [
   {
     icon: MessageSquare,
     title: "Forums",
-    position: "top-1/2 right-[5%] -translate-y-1/2",
+    position: "top-1/3 right-[5%] -translate-y-1/2",
   },
   {
     icon: Globe,
@@ -33,7 +33,7 @@ const nodes = [
 
 export default function SurfaceWebIllustration() {
   return (
-    <div className="relative h-[550px] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-slate-950 via-blue-950/40 to-slate-950">
+    <div className="relative h-[550px] w-full overflow-hidden rounded-3xl ">
 
       {/* Grid */}
       <div className="absolute inset-0 opacity-20">
@@ -66,41 +66,7 @@ export default function SurfaceWebIllustration() {
           }}
         />
 
-        <motion.line
-          x1="500"
-          y1="300"
-          x2="840"
-          y2="300"
-          stroke="#3B82F6"
-          strokeWidth="2"
-          strokeDasharray="8 8"
-          animate={{
-            strokeDashoffset: [100, 0],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 4,
-            ease: "linear",
-          }}
-        />
-
-        <motion.line
-          x1="500"
-          y1="300"
-          x2="160"
-          y2="300"
-          stroke="#3B82F6"
-          strokeWidth="2"
-          strokeDasharray="8 8"
-          animate={{
-            strokeDashoffset: [100, 0],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 4,
-            ease: "linear",
-          }}
-        />
+    
 
         <motion.line
           x1="500"
@@ -254,3 +220,5 @@ export default function SurfaceWebIllustration() {
     </div>
   );
 }
+
+
