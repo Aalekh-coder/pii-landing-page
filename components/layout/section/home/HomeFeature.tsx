@@ -17,7 +17,7 @@ import { useState } from "react";
               Intelligence Platform
             </span>
 
-            <h2 className="text-6xl font-bold mt-6">MRM Intelligence</h2>
+            <h2 className="text-5xl md:text-7xl font-bold mt-6">MRM Intelligence</h2>
 
             <p className="text-zinc-400 max-w-2xl mx-auto mt-4">
               Unified investigation and intelligence platform for cyber, OSINT,
@@ -25,15 +25,16 @@ import { useState } from "react";
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {intelligenceData.map(
               ({ title, features, description, icon }, idx) => (
+              
                 <motion.div
                   onMouseEnter={() => setHoveredIndex(idx)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   key={idx}
                   whileHover={{ y: -8 }}
-                  className={`magic-bento-card bg-[#120F17] border border-white/10 hover:border-blue-500 hover:shadow-blue-500 shadow-2xl duration-300 rounded-3xl p-6 h-full group ${
+                  className={`md:magic-bento-card bg-[#120F17] border border-white/10 hover:border-blue-500 hover:shadow-blue-500 shadow-2xl duration-300 rounded-3xl p-6 h-full group ${
                     hoveredIndex !== null && hoveredIndex !== idx
                       ? "blur-sm opacity-45"
                       : ""

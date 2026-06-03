@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <main className="bg-black text-white">
       {/* hero section  */}
-      <section className="h-[160vh] md:h-[130vh] lg:h-screen relative">
+      <section className="h-[100vh] relative">
         <LightRays
           raysOrigin="bottom-center"
           raysColor="#0000FF"
@@ -46,11 +46,30 @@ const Home = () => {
           saturation={1}
         />
 
+        <div className="absolute inset-0 overflow-hidden z-10">
+          <div
+            className="
+      absolute inset-0
+      [background-image:radial-gradient(rgba(59,130,255,0.5)_0.2px,transparent_5px)]
+      [background-size:22px_22px]
+      opacity-90
+    "
+          />
+
+          <div
+            className="
+      absolute inset-0
+      bg-[radial-gradient(circle_at_center,transparent_20%,black_80%)]
+      hover:bg-[radial-gradient(circle_at_center,transparent50%,black_80%)]
+    "
+          />
+        </div>
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="absolute top-30 md:top-40 lg:top-50 left-0 right-0 z-10 container mx-auto px-6 text-center"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 container mx-auto px-6 text-center"
         >
           <motion.div
             variants={itemVariants}

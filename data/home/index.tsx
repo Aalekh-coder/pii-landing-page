@@ -52,9 +52,9 @@ export const intelligenceData = [
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         {/* <!-- Globe --> */}
         <circle cx="12" cy="12" r="7" />
@@ -85,9 +85,9 @@ export const intelligenceData = [
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <line x1="7" y1="7" x2="17" y2="7" />
         <line x1="7" y1="7" x2="12" y2="17" />
@@ -118,9 +118,9 @@ export const intelligenceData = [
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <rect x="4" y="4" width="5" height="5" rx="1" />
         <rect x="15" y="4" width="5" height="5" rx="1" />
@@ -147,9 +147,9 @@ export const intelligenceData = [
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <path d="M5 15V11L7 7H17L19 11V15" />
         <path d="M5 15H19" />
@@ -173,9 +173,9 @@ export const intelligenceData = [
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <circle cx="12" cy="12" r="2.5" />
 
@@ -213,9 +213,9 @@ export const intelligenceData = [
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <circle cx="11" cy="11" r="7" />
         <path d="M4 11H18" />
@@ -243,9 +243,9 @@ export const intelligenceData = [
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <circle cx="12" cy="12" r="2" />
 

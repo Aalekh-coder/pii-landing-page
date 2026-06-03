@@ -21,6 +21,11 @@ import {
   ShieldAlert,
   BookOpen,
   Shield,
+  Vibrate,
+  FileHeadphone,
+  VibrateOff,
+  KeyRound,
+  ScanLine,
 } from "lucide-react";
 import { serviceSectors } from "@/data/layout/nav";
 
@@ -41,7 +46,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-6 left-1/2 z-50 -translate-x-1/2">
-      <nav className="flex items-center gap-10 rounded-3xl border border-white/10 bg-black/40 px-6 py-3 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] w-[90vw] lg:w-fit lg:min-w-[1100px] justify-between transition-all duration-300">
+      <nav className="flex items-center gap-10 rounded-3xl border border-white/10 bg-black/40 px-6 py-3 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] w-[90vw] lg:w-fit lg:min-w-[90vw] justify-between transition-all duration-300">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div className="h-14 w-14">
@@ -103,7 +108,7 @@ export default function Navbar() {
                     >
                       <ShieldAlert
                         size={18}
-                        className="text-red-400 group-hover/item:scale-110 transition-transform"
+                        className="text-blue-400 group-hover/item:scale-110 transition-transform"
                       />
                       <span className="text-sm">Cyber Crime Training</span>
                     </Link>
@@ -113,9 +118,57 @@ export default function Navbar() {
                     >
                       <BookOpen
                         size={18}
-                        className="text-green-400 group-hover/item:scale-110 transition-transform"
+                        className="text-blue-400 group-hover/item:scale-110 transition-transform"
                       />
                       <span className="text-sm">Cyber Awareness</span>
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          <div
+            className="relative"
+            onMouseEnter={() => setHoveredMenu("reportLostMobile")}
+            onMouseLeave={() => setHoveredMenu(null)}
+          >
+            <button className="flex items-center gap-1 hover:text-blue-400 transition-colors font-medium">
+              Report Lost Mobile{" "}
+              <ChevronDown
+                size={16}
+                className={`transition-transform duration-300 ${hoveredMenu === "reportLostMobile" ? "rotate-180" : ""}`}
+              />
+            </button>
+            <AnimatePresence>
+              {hoveredMenu === "reportLostMobile" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="absolute top-full left-0 bg-black/80 backdrop-blur-xl border border-white/10 rounded-xl p-2 mt-4 min-w-[240px] shadow-2xl z-50"
+                >
+                  <div className="grid gap-1">
+                    <Link
+                      href="/reportLostMobile/reportLostMobile"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg transition-colors group/item"
+                    >
+                      <Vibrate
+                        size={18}
+                        className="text-blue-400 group-hover/item:scale-110 transition-transform"
+                      />
+                      <span className="text-sm">Report Lost Mobile</span>
+                    </Link>
+                    <Link
+                      href="/reportLostMobile/Lost Mobile Status Check"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg transition-colors group/item"
+                    >
+                      <FileHeadphone
+                        size={18}
+                        className="text-blue-400 group-hover/item:scale-110 transition-transform"
+                      />
+                      <span className="text-sm">Lost Mobile Status Check</span>
                     </Link>
                   </div>
                 </motion.div>
@@ -175,6 +228,64 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
+           <div
+            className="relative"
+            onMouseEnter={() => setHoveredMenu("CEIR")}
+            onMouseLeave={() => setHoveredMenu(null)}
+          >
+            <button className="flex items-center gap-1 hover:text-blue-400 transition-colors font-medium">
+            CEIR Services
+              <ChevronDown
+                size={16}
+                className={`transition-transform duration-300 ${hoveredMenu === "CEIR" ? "rotate-180" : ""}`}
+              />
+            </button>
+            <AnimatePresence>
+              {hoveredMenu === "CEIR" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="absolute top-full left-0 bg-black/80 backdrop-blur-xl border border-white/10 rounded-xl p-2 mt-4 min-w-[240px] shadow-2xl z-50"
+                >
+                  <div className="grid gap-1">
+                    <Link
+                      href="/reportLostMobile/reportLostMobile"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg transition-colors group/item"
+                    >
+                      <VibrateOff
+                        size={18}
+                        className="text-blue-400 group-hover/item:scale-110 transition-transform"
+                      />
+                      <span className="text-sm">Block Stolen</span>
+                    </Link>
+                    <Link
+                      href="/reportLostMobile/Lost Mobile Status Check"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg transition-colors group/item"
+                    >
+                      <KeyRound 
+                        size={18}
+                        className="text-blue-400 group-hover/item:scale-110 transition-transform"
+                      />
+                      <span className="text-sm">Un-Block Found Mobile</span>
+                    </Link>
+                    <Link
+                      href="/reportLostMobile/Lost Mobile Status Check"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-lg transition-colors group/item"
+                    >
+                      <ScanLine 
+                        size={18}
+                        className="text-blue-400 group-hover/item:scale-110 transition-transform"
+                      />
+                      <span className="text-sm">Check Request Status</span>
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <Link
             href="/contact"
             className="hover:text-blue-400 transition-colors font-medium"
@@ -207,8 +318,8 @@ export default function Navbar() {
               side="top"
               className="bg-black text-white border-l border-white/20 "
             >
-              <SheetHeader className="mb-6">
-                <SheetTitle className="text-white text-2xl">
+              <SheetHeader className="mb-6 hidden">
+                <SheetTitle className="text-white text-2xl ">
                   Navigation
                 </SheetTitle>
                 <SheetDescription className="text-gray-400">
@@ -252,7 +363,7 @@ export default function Navbar() {
                               href="/training/osint"
                               className="flex items-center gap-3 text-lg hover:text-blue-400 transition-colors"
                             >
-                              <Search size={20} className="text-blue-400" />{" "}
+                              <Search size={20} className="text-blue-500" />{" "}
                               Osint training
                             </Link>
                           </SheetClose>
@@ -261,7 +372,10 @@ export default function Navbar() {
                               href="/training/cyber-crime"
                               className="flex items-center gap-3 text-lg hover:text-blue-400 transition-colors"
                             >
-                              <ShieldAlert size={20} className="text-red-400" />{" "}
+                              <ShieldAlert
+                                size={20}
+                                className="text-blur-500"
+                              />{" "}
                               Cyber Crime Training
                             </Link>
                           </SheetClose>
@@ -270,7 +384,7 @@ export default function Navbar() {
                               href="/training/cyber-awareness"
                               className="flex items-center gap-3 text-lg hover:text-blue-400 transition-colors"
                             >
-                              <BookOpen size={20} className="text-green-400" />{" "}
+                              <BookOpen size={20} className="text-blue-500" />{" "}
                               Cyber Awareness
                             </Link>
                           </SheetClose>
@@ -313,7 +427,9 @@ export default function Navbar() {
                                 </div>
                                 <div className="flex flex-col">
                                   <p>{sector.label}</p>
-                                  <p className="text-sm text-gray-500">{sector.description}</p>
+                                  <p className="text-sm text-gray-500">
+                                    {sector.description}
+                                  </p>
                                 </div>
                               </Link>
                             </SheetClose>
