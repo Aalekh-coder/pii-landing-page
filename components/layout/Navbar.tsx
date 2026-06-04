@@ -9,7 +9,6 @@ import {
   SheetClose,
   SheetContent,
   SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -51,6 +50,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2">
           <div className="h-14 w-14">
             <Image
+            loading="eager"
               src="/layout/nav/TSN LOGO.webp"
               width={1000}
               height={1000}
@@ -328,6 +328,7 @@ export default function Navbar() {
                   <Link href="/" className="flex items-center gap-2">
                     <div className="h-10 w-10">
                       <Image
+                      loading="eager"
                         src="/layout/nav/TSN LOGO.webp"
                         width={1000}
                         height={1000}

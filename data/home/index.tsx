@@ -528,3 +528,57 @@ export const deepWeb = [
     ),
   },
 ];
+
+
+export const tree = {
+  root: { id: "root", label: ["MRM", "Intelligence"] },
+  branches: [
+    {
+      id: "misc", label: "Miscellaneous Tools",
+      children: [
+        { id: "dth", label: "DTH Info" },
+        { id: "gas", label: "GAS Info" },
+        { id: "phish", label: "Phishing" },
+      ],
+    },
+    {
+      id: "domain", label: "Domain Intelligence",
+      children: [
+        { id: "creation", label: "Creation Data" },
+        { id: "hosting", label: "Hosting Details" },
+        { id: "domainIntel", label: "Domain Intelligence" },
+      ],
+    },
+    {
+      id: "osint", label: "OSINT", highlight: true,
+      children: [
+        { id: "indian", label: "Indian No OSINT" },
+        {
+          id: "intl", label: "International Intell.", grandchildren: [
+            { id: "gmail", label: "Gmail" },
+            { id: "proton", label: "Proton Mail" },
+            { id: "outlook", label: "Outlook" },
+            { id: "yahoo", label: "Yahoo India" },
+          ]
+        },
+        { id: "email", label: "Email" },
+      ],
+    },
+    {
+      id: "ip", label: "IP Investigation",
+      children: [],
+    },
+    {
+      id: "crypto", label: "Crypto Investigation",
+      children: [
+        { id: "wallet", label: "Wallet Creation" },
+        { id: "paymail", label: "Payment Mail" },
+        { id: "walletcomp", label: "Wallet Comparison" },
+      ],
+    },
+    {
+      id: "nodal", label: "Nodal Lookup",
+      children: [],
+    },
+  ],
+};
