@@ -7,7 +7,7 @@ import IdentifierTracingAnimation from "@/components/spacial-componets/svgs/Iden
 import IndianNumberOSINT from "@/components/spacial-componets/svgs/IndianNumberOSINT";
 import NodalLookupAnimation from "@/components/spacial-componets/svgs/NodalLookupAnimation";
 import UtilityIntelligenceAnimation from "@/components/spacial-componets/svgs/UtilityIntelligenceAnimation";
-import { motion, Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   Activity,
   BellRing,

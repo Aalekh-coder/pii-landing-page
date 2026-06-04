@@ -1,7 +1,8 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { tree } from "@/data/home";
+
 
 const Hero = () => {
   return <MRMHero />;
@@ -9,7 +10,43 @@ const Hero = () => {
 
 export default Hero;
 
-function AnimatedLine({ x1, y1, x2, y2, delay = 0, color = "#63B3ED", id }) {
+interface AnimatedLineProps {
+  x1: number;
+  y1: number;
+  x2: number;
+  y2: number;
+  delay?: number;
+  color?: string;
+  id: number;
+}
+
+interface GrandChildNode {
+  id: string;
+  label: string | string[];
+}
+
+interface ChildNode {
+  id: string;
+  label: string | string[];
+  grandchildren?: GrandChildNode[];
+}
+
+interface MainNode {
+  id: string;
+  label: string | string[];
+  highlight?: boolean;
+  children: ChildNode[];
+}
+
+function AnimatedLine({
+  x1,
+  y1,
+  x2,
+  y2,
+  delay = 0,
+  color = "#63B3ED",
+  id,
+}: AnimatedLineProps) {
   const len = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
   return (
     <g>
@@ -60,6 +97,19 @@ function AnimatedLine({ x1, y1, x2, y2, delay = 0, color = "#63B3ED", id }) {
 }
 
 /* ─── NODE BOX ─────────────────────────────────────────── */
+interface NodeBoxProps {
+  label: string | string[];
+  highlight?: boolean;
+  active: boolean;
+  onClick: () => void;
+  delay: number;
+  x: number;
+  y: number;
+  w?: number;
+  h?: number;
+  small?: boolean;
+}
+
 function NodeBox({
   label,
   highlight,
@@ -71,7 +121,7 @@ function NodeBox({
   w = 120,
   h = 36,
   small = false,
-}) {
+}: NodeBoxProps) {
   return (
     <motion.g
       initial={{ opacity: 0, scale: 0.7 }}
@@ -165,17 +215,17 @@ function NodeBox({
 
 /* ─── MAIN COMPONENT ───────────────────────────────────── */
 function MRMHero() {
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setTimeout(() => setMounted(true), 200);
   }, []);
 
-  const toggle = (id) => setActive((p) => (p === id ? null : id));
+  const toggle = (id: string) => setActive((p) => (p === id ? null : id));
 
   /* Layout constants */
   const SVG_W = 600;
-  const SVG_H = 500;
+  const SVG_H = 510;
 
   const ROOT_X = 82,
     ROOT_Y = 340;
@@ -199,13 +249,22 @@ function MRMHero() {
     gcH = 26;
 
   /* build connector path segments */
-  const lines = [];
+  type LineSegment = {
+    id: number;
+    x1: number;
+    y1: number;
+    x2: number;
+    y2: number;
+    delay: number;
+  };
+
+  const lines: LineSegment[] = [];
   let lineId = 0;
 
   if (mounted) {
     // root → trunk vertical: we draw horizontal stub then vertical then horizontals
     // root → each branch (L-shaped: right then up/down)
-    tree.branches.forEach((branch, i) => {
+    (tree.branches as MainNode[]).forEach((branch, i) => {
       const by = branchYs[i];
       const midX = (ROOT_X + ROOT_W / 2 + L1_X - branchW / 2) / 2;
       // horizontal from root
@@ -309,15 +368,16 @@ function MRMHero() {
   }
 
   return (
-    <div
-      className="min-h-screen  lg:h-[120] bg-[#070d1a] flex items-center justify-center overflow-hidden relative select-none py-40 lg:py-20"
-     
-    >
-       {/* Grid bg */}
-      <div className="absolute inset-0 opacity-[0.035]" style={{
-        backgroundImage: "linear-gradient(rgba(99,179,237,1) 1px,transparent 3px),linear-gradient(90deg,rgba(99,179,237,1) 4px,transparent 1px)",
-        backgroundSize: "32px 32px"
-      }} />
+    <div className="min-h-screen  lg:h-[120] bg-[#070d1a] flex items-center justify-center overflow-hidden relative select-none py-40 lg:py-20">
+      {/* Grid bg */}
+      <div
+        className="absolute inset-0 opacity-[0.035]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(99,179,237,1) 1px,transparent 3px),linear-gradient(90deg,rgba(99,179,237,1) 4px,transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
 
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
         {/* Left Side: Content */}
@@ -426,7 +486,7 @@ function MRMHero() {
             </motion.g>
 
             {/* ── LEVEL-1 BRANCHES ── */}
-            {tree.branches.map((b, i) => {
+            {(tree.branches as MainNode[]).map((b, i) => {
               const by = branchYs[i];
               const isActive = active === b.id;
 
