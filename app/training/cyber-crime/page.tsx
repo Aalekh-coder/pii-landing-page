@@ -1,6 +1,4 @@
-// "use client";
-// import { useState, useEffect, useRef } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
+
 "use client";
 import { tree } from "@/data/home";
 import { useState, useEffect } from "react";
@@ -11,70 +9,70 @@ import { motion } from "framer-motion";
    ═══════════════════════════════════════════════════════════ */
 const BREAKPOINTS = {
   phone: {
-    ROOT_W: 90,
+    ROOT_W: 130,
     ROOT_H: 50,
-    L1_W: 140,
-    L1_H: 34,
-    L2_W: 140,
+    L1_W: 110,
+    L1_H: 29,
+    L2_W: 110,
     L2_H: 27,
     L3_W: 80,
     L3_H: 20,
     ROOT_FS: 14,
+    L1_FS: 12,
+    L2_FS: 12,
+    L3_FS: 12,
+    L1_GAP: 15,
+    L2_GAP: 8,
+    L3_GAP: 25,
+    ROOT_X: 20,
+    L1_X: 160,
+    L2_X: 289,
+    L3_X: 400,
+    DOT_R: 2,
+  },
+  tablet: {
+    ROOT_W:130,
+    ROOT_H: 48,
+    L1_W: 158,
+    L1_H: 32,
+    L2_W: 140,
+    L2_H: 28,
+    L3_W: 100,
+    L3_H: 24,
+    ROOT_FS: 10,
     L1_FS: 16,
     L2_FS: 16,
     L3_FS: 16,
     L1_GAP: 15,
-    L2_GAP: 8,
-    L3_GAP: 15,
-    ROOT_X: 20,
-    L1_X: 155,
-    L2_X: 310,
-    L3_X: 438,
-    DOT_R: 2,
+    L2_GAP: 10,
+    L3_GAP: 8,
+    ROOT_X: 52,
+    L1_X: 220,
+    L2_X: 400,
+    L3_X: 570,
+    DOT_R: 2.5,
   },
-  tablet: {
-    ROOT_W: 88,
+  desktop: {
+    ROOT_W:130,
     ROOT_H: 48,
-    L1_W: 118,
+    L1_W: 158,
     L1_H: 32,
-    L2_W: 108,
+    L2_W: 140,
     L2_H: 28,
-    L3_W: 90,
+    L3_W: 100,
     L3_H: 24,
     ROOT_FS: 10,
-    L1_FS: 9,
-    L2_FS: 8.5,
-    L3_FS: 8,
+    L1_FS: 16,
+    L2_FS: 16,
+    L3_FS: 16,
     L1_GAP: 15,
     L2_GAP: 10,
     L3_GAP: 8,
     ROOT_X: 52,
-    L1_X: 200,
-    L2_X: 346,
-    L3_X: 478,
-    DOT_R: 2.5,
-  },
-  desktop: {
-    ROOT_W: 100,
-    ROOT_H: 52,
-    L1_W: 130,
-    L1_H: 36,
-    L2_W: 120,
-    L2_H: 30,
-    L3_W: 105,
-    L3_H: 26,
-    ROOT_FS: 12,
-    L1_FS: 10,
-    L2_FS: 10,
-    L3_FS: 9,
-    L1_GAP: 18,
-    L2_GAP: 10,
-    L3_GAP: 8,
-    ROOT_X: 82,
-    L1_X: 230,
+    L1_X: 220,
     L2_X: 400,
-    L3_X: 560,
-    DOT_R: 3,
+    L3_X: 570,
+    DOT_R: 2.5,
   },
 } as const;
 
@@ -509,7 +507,7 @@ export default function MRMHero() {
     >
       {/* grid bg */}
       <div
-        className="absolute inset-0 opacity-[0.035]"
+        className="absolute inset-0 opacity-[0.09]"
         style={{
           backgroundImage:
             "linear-gradient(rgba(99,179,237,1) 1px,transparent 1px),linear-gradient(90deg,rgba(99,179,237,1) 1px,transparent 1px)",
@@ -520,143 +518,143 @@ export default function MRMHero() {
       <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-blue-700/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-cyan-500/8 rounded-full blur-3xl pointer-events-none" />
 
-    
-
-     
-
-
-            <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-              {/* Left Side: Content */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              >
-                <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-3 md:mb-8">
-                  MRM Intelligence <br />
-                  <span className="text-blue-400">Platform</span>
-                </h1>
-                <p className="text-zinc-400 text-lg md:text-xl leading-relaxed max-w-xl">
-                  A comprehensive and unified intelligence platform designed for deep
-                  cyber investigations, real-time threat detection, and advanced OSINT
-                  operations across the surface, deep, and dark web.
-                </p>
-              </motion.div>
-      
-              {/* Right Side: SVG Tree */}
-      <div
-        className="z-10  flex justify-center overflow-hidden px-2"
-        style={{ WebkitOverflowScrolling: "touch" }}
-      >
-        <svg
-          viewBox={`0 0 ${SVG_W} ${SVG_H}`}
-          style={{
-            width: "100%",
-            minWidth: SVG_W,
-            height: "auto",
-            maxHeight: "72vh",
-            overflow: "visible",
-            display: "block",
-          }}
+      <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center lg:items-start relative z-10 pt-30">
+        {/* Left Side: Content */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="px-6 lg:w-1/2"
         >
-          <defs>
-            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="3" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-            <filter id="rootGlow">
-              <feGaussianBlur stdDeviation="6" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
+          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-3 md:mb-8">
+            MRM Intelligence <br />
+            <span className="text-blue-400">Platform</span>
+          </h1>
+          <p className="text-zinc-400 text-lg md:text-xl leading-relaxed max-w-xl">
+            A comprehensive and unified intelligence platform designed for deep
+            cyber investigations, real-time threat detection, and advanced OSINT
+            operations across the surface, deep, and dark web.
+          </p>
+        </motion.div>
 
-          {/* connector lines + dots */}
-          {mounted &&
-            layout.lines.map((l: any) => (
-              <AnimatedLine key={l.id} {...l} dotR={DOT_R} />
-            ))}
+        {/* Right Side: SVG Tree */}
+        <div
+          className="z-10  flex justify-center overflow-hidden px-2 lg:w-1/2"
+          style={{ WebkitOverflowScrolling: "touch" }}
+        >
+          <svg
+            viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+            style={{
+              width: "100%",
+              minWidth: SVG_W,
+              height: "auto",
+              maxHeight: "72vh",
+              overflow: "visible",
+              display: "block",
+            }}
+          >
+            <defs>
+              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <filter id="rootGlow">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
 
-          {/* root node */}
-          <motion.g filter="url(#rootGlow)">
-            <motion.rect
-              x={ROOT_X - ROOT_W / 2}
-              y={ROOT_Y - ROOT_H / 2}
-              width={ROOT_W}
-              height={ROOT_H}
-              rx={6}
-              fill="rgba(99,179,237,0.15)"
-              stroke="#63B3ED"
-              strokeWidth={2}
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, ease: "backOut" }}
-            />
-            <motion.rect
-              x={ROOT_X - ROOT_W / 2 - 5}
-              y={ROOT_Y - ROOT_H / 2 - 5}
-              width={ROOT_W + 10}
-              height={ROOT_H + 10}
-              rx={8}
-              fill="none"
-              stroke="#63B3ED"
-              strokeWidth={1}
-              strokeOpacity={0.3}
-              animate={{ scale: [1, 1.12, 1], opacity: [0.4, 0, 0.4] }}
-              transition={{ duration: 2.5, repeat: Infinity }}
-            />
-            <text
-              x={ROOT_X}
-              y={ROOT_Y - ROOT_FS * 0.4}
-              textAnchor="middle"
-              fill="#90CDF4"
-              fontSize={ROOT_FS}
-              fontFamily="'JetBrains Mono',monospace"
-              fontWeight="700"
-            >
-              MRM
-            </text>
-            <text
-              x={ROOT_X}
-              y={ROOT_Y + ROOT_FS * 1.1}
-              textAnchor="middle"
-              fill="#90CDF4"
-              fontSize={ROOT_FS}
-              fontFamily="'JetBrains Mono',monospace"
-              fontWeight="700"
-            >
-              Intelligence
-            </text>
-          </motion.g>
+            {/* connector lines + dots */}
+            {mounted &&
+              layout.lines.map((l: any) => (
+                <AnimatedLine key={l.id} {...l} dotR={DOT_R} />
+              ))}
 
-          {/* all branch nodes */}
-          {layout.nodes
-            .filter((n: any) => n.level > 0)
-            .map((n: any, i: number) => (
-              <NodeBox
-                key={n.id}
-                label={n.label}
-                highlight={n.highlight}
-                active={active === n.id}
-                onClick={() => toggle(n.id)}
-                delay={0.3 + i * 0.05}
-                x={n.x}
-                y={n.y}
-                w={n.w}
-                h={n.h}
-                fs={n.fs}
+            {/* root node */}
+            <motion.g filter="url(#rootGlow)">
+              <motion.rect
+                x={ROOT_X - ROOT_W / 2}
+                y={ROOT_Y - ROOT_H / 2}
+                width={ROOT_W}
+                height={ROOT_H}
+                rx={6}
+                fill="rgba(99,179,237,0.15)"
+                stroke="#63B3ED"
+                strokeWidth={2}
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, ease: "backOut" }}
+              // className="hidden md:flex"
+
               />
-            ))}
-        </svg>
-      </div>
-            </div>
+              <motion.rect
+                x={ROOT_X - ROOT_W / 2 - 5}
+                y={ROOT_Y - ROOT_H / 2 - 5}
+                width={ROOT_W + 10}
+                height={ROOT_H + 10}
+                rx={8}
+                fill="none"
+                stroke="#63B3ED"
+                strokeWidth={1}
+                strokeOpacity={0.3}
+                animate={{ scale: [1, 1.12, 1], opacity: [0.4, 0, 0.4] }}
+                transition={{ duration: 2.5, repeat: Infinity }}
+              className="flex items-end justify-end"
 
-    
+              />
+              <text
+                x={ROOT_X}
+                y={ROOT_Y - ROOT_FS * 0.4}
+                textAnchor="middle"
+                fill="#90CDF4"
+                fontSize={ROOT_FS}
+                fontFamily="'JetBrains Mono',monospace"
+                fontWeight="700"
+               className="text-[10px] md:text-xl"
+              >
+                MRM
+              </text>
+              <text
+                x={ROOT_X}
+                y={ROOT_Y + ROOT_FS * 1.1}
+                textAnchor="middle"
+                fill="#90CDF4"
+                fontSize={ROOT_FS}
+                fontFamily="'JetBrains Mono',monospace"
+                fontWeight="700"
+                className="text-[10px] md:text-lg"
+              >
+                Intelligence
+              </text>
+            </motion.g>
+
+            {/* all branch nodes */}
+            {layout.nodes
+              .filter((n: any) => n.level > 0)
+              .map((n: any, i: number) => (
+                <NodeBox
+                  key={n.id}
+                  label={n.label}
+                  highlight={n.highlight}
+                  active={active === n.id}
+                  onClick={() => toggle(n.id)}
+                  delay={0.3 + i * 0.05}
+                  x={n.x}
+                  y={n.y}
+                  w={n.w}
+                  h={n.h}
+                  fs={n.fs}
+                />
+              ))}
+          </svg>
+        </div>
+      </div>
     </div>
   );
 }
