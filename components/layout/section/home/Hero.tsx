@@ -368,10 +368,10 @@ function MRMHero() {
   }
 
   return (
-    <div className="min-h-screen  lg:h-[120] bg-[#070d1a] flex items-center justify-center overflow-hidden relative select-none py-40 lg:py-20">
+    <div className="min-h-screen bg-[#070d1a] flex items-center justify-center overflow-hidden relative select-none py-30 lg:py-20">
       {/* Grid bg */}
       <div
-        className="absolute inset-0 opacity-[0.035]"
+        className="absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage:
             "linear-gradient(rgba(99,179,237,1) 1px,transparent 3px),linear-gradient(90deg,rgba(99,179,237,1) 4px,transparent 1px)",
@@ -386,7 +386,7 @@ function MRMHero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8">
+          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-3 md:mb-8">
             MRM Intelligence <br />
             <span className="text-blue-400">Platform</span>
           </h1>
@@ -401,8 +401,6 @@ function MRMHero() {
         <div className="flex justify-center lg:justify-end overflow-visible">
           <svg
             viewBox={`0 0 ${SVG_W} ${SVG_H}`}
-            width={SVG_W}
-            height={SVG_H}
             className="w-full h-auto max-w-[650px]"
             style={{ maxWidth: "100%", overflow: "visible" }}
           >
