@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { tree } from "@/data/home";
 
+
 const Hero = () => {
   return <MRMHero />;
 };
@@ -178,7 +179,7 @@ function NodeBox({
             y={y - 6}
             textAnchor="middle"
             fill={highlight ? "#90CDF4" : "#E2E8F0"}
-            fontSize={isMobile ? (small ? 22 : 32) : small ? 18 : 28}
+            fontSize={isMobile ? (small ? 22 : 32) : (small ? 18 : 28)}
             fontFamily="'JetBrains Mono', monospace"
             fontWeight="600"
           >
@@ -189,7 +190,7 @@ function NodeBox({
             y={y + 8}
             textAnchor="middle"
             fill={highlight ? "#90CDF4" : "#E2E8F0"}
-            fontSize={isMobile ? (small ? 22 : 32) : small ? 18 : 28}
+            fontSize={isMobile ? (small ? 22 : 32) : (small ? 18 : 28)}
             fontFamily="'JetBrains Mono', monospace"
             fontWeight="600"
           >
@@ -203,7 +204,7 @@ function NodeBox({
           textAnchor="middle"
           dominantBaseline="middle"
           fill={highlight ? "#90CDF4" : "#E2E8F0"}
-          fontSize={isMobile ? (small ? 14 : 16) : small ? 11 : 13}
+          fontSize={isMobile ? (small ? 14 : 16) : (small ? 11 : 13)}
           fontFamily="'JetBrains Mono', monospace"
           fontWeight="500"
         >
@@ -388,196 +389,8 @@ function MRMHero() {
           backgroundSize: "32px 32px",
         }}
       />
-      {/* for mobile only  */}
-      <div className="container mx-auto  grid grid-cols-1 lg:grid-cols-2 gap-30 items-center relative z-10 lg:pt-14 md:hidden">
-        
 
-        {/* Right Side: SVG Tree */}
-        <div className="flex justify-center lg:justify-end overflow-visible">
-          <svg
-            viewBox={`0 0 ${SVG_W} ${SVG_H}`}
-            className="w-full h-auto max-w-[650px]"
-            style={{ maxWidth: "100%", overflow: "visible" }}
-          >
-            <defs>
-              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="3" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-              <filter id="rootGlow">
-                <feGaussianBlur stdDeviation="6" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-              <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#63B3ED" stopOpacity="0" />
-                <stop offset="50%" stopColor="#90CDF4" stopOpacity="0.9" />
-                <stop offset="100%" stopColor="#63B3ED" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-
-            {/* ── CONNECTOR LINES ── */}
-            {lines.map((l) => (
-              <AnimatedLine key={l.id} {...l} />
-            ))}
-
-            {/* ── ROOT NODE ── */}
-            <motion.g filter="url(#rootGlow)">
-              <motion.rect
-                x={ROOT_X - ROOT_W / 2}
-                y={ROOT_Y - ROOT_H / 2}
-                width={ROOT_W}
-                height={ROOT_H}
-                rx={6}
-                fill="rgba(99,179,237,0.15)"
-                stroke="#63B3ED"
-                strokeWidth={2}
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, ease: "backOut" }}
-              />
-              <motion.rect
-                x={ROOT_X - ROOT_W / 2 - 5}
-                y={ROOT_Y - ROOT_H / 2 - 5}
-                width={ROOT_W + 10}
-                height={ROOT_H + 10}
-                rx={8}
-                fill="none"
-                stroke="#63B3ED"
-                strokeWidth={1}
-                strokeOpacity={0.3}
-                animate={{ scale: [1, 1.12, 1], opacity: [0.4, 0, 0.4] }}
-                transition={{ duration: 2.5, repeat: Infinity }}
-              />
-              <text
-                x={ROOT_X}
-                y={ROOT_Y - 8}
-                textAnchor="middle"
-                fill="#E2E8F0"
-                fontSize={isMobile ? 14 : 14}
-                fontFamily="'JetBrains Mono',monospace"
-                fontWeight="700"
-              >
-                MRM
-              </text>
-              <text
-                x={ROOT_X}
-                y={ROOT_Y + 8}
-                textAnchor="middle"
-                fill="#E2E8F0"
-                fontSize={isMobile ? 14 : 14}
-                fontFamily="'JetBrains Mono',monospace"
-                fontWeight="700"
-              >
-                Intelligence
-              </text>
-            </motion.g>
-
-            {/* ── LEVEL-1 BRANCHES ── */}
-            {(tree.branches as MainNode[]).map((b, i) => {
-              const by = branchYs[i];
-              const isActive = active === b.id;
-
-              return (
-                <g key={b.id}>
-                  <NodeBox
-                    label={b.label}
-                    highlight={b.highlight}
-                    active={isActive}
-                    onClick={() => toggle(b.id)}
-                    delay={0.3 + i * 0.07}
-                    x={L1_X}
-                    y={by}
-                    w={branchW}
-                    h={branchH}
-                    isMobile={isMobile}
-                  />
-
-                  {/* ── LEVEL-2 CHILDREN ── */}
-                  {b.children.length > 0 &&
-                    (() => {
-                      const cc = b.children.length;
-                      const totalH = (cc - 1) * 44;
-                      const startY = by - totalH / 2;
-                      return b.children.map((ch, ci) => {
-                        const cy = startY + ci * 44;
-                        const isActiveC = active === ch.id;
-                        return (
-                          <g key={ch.id}>
-                            <NodeBox
-                              label={ch.label}
-                              active={isActiveC}
-                              onClick={() => toggle(ch.id)}
-                              delay={0.45 + i * 0.07 + ci * 0.06}
-                              x={L2_X}
-                              y={cy}
-                              w={childW}
-                              h={childH}
-                              isMobile={isMobile}
-                            />
-
-                            {/* ── LEVEL-3 GRANDCHILDREN ── */}
-                            {ch.grandchildren &&
-                              (() => {
-                                const gc = ch.grandchildren;
-                                const gcTotalH = (gc.length - 1) * 34;
-                                const gcStartY = cy - gcTotalH / 2;
-                                return gc.map((g, gi) => {
-                                  const gcy = gcStartY + gi * 34;
-                                  return (
-                                    <NodeBox
-                                      key={g.id}
-                                      label={g.label}
-                                      active={active === g.id}
-                                      onClick={() => toggle(g.id)}
-                                      delay={0.7 + gi * 0.06}
-                                      x={L3_X}
-                                      y={gcy}
-                                      w={gcW}
-                                      h={gcH}
-                                      small
-                                      isMobile={isMobile}
-                                    />
-                                  );
-                                });
-                              })()}
-                          </g>
-                        );
-                      });
-                    })()}
-                </g>
-              );
-            })}
-          </svg>
-        </div>
-
-        {/* Left Side: Content */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="px-6"
-        >
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-3 md:mb-8">
-            MRM Intelligence <br />
-            <span className="text-blue-400">Platform</span>
-          </h1>
-          <p className="text-zinc-400 text-lg md:text-xl leading-relaxed max-w-xl">
-            A comprehensive and unified intelligence platform designed for deep
-            cyber investigations, real-time threat detection, and advanced OSINT
-            operations across the surface, deep, and dark web.
-          </p>
-        </motion.div>
-      </div>
-
-
-      {/* for desktop only  */}
-      <div className="container mx-auto grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 lg:pt-14 hidden md:grid">
+      <div className="container mx-auto  grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 lg:pt-14">
         {/* Left Side: Content */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
