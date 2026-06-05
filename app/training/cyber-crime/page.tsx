@@ -37,6 +37,14 @@ interface MainNode {
   children: ChildNode[];
 }
 
+interface Branch {
+  id: string;
+  label: string | string[];
+  highlight?: boolean;
+  children: ChildNode[];
+}
+
+
 function AnimatedLine({
   x1,
   y1,
