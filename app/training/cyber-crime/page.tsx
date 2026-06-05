@@ -79,7 +79,9 @@ const BREAKPOINTS = {
 } as const;
 
 type BreakpointKey = keyof typeof BREAKPOINTS;
-type Config = typeof BREAKPOINTS.desktop;
+type Config = {
+  readonly [K in keyof typeof BREAKPOINTS.desktop]: number;
+};
 
 /* ─── HOOK: detect viewport ─────────────────────────────── */
 function useBreakpoint(): BreakpointKey {
