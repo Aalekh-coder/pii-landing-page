@@ -579,7 +579,7 @@ const BREAKPOINTS = {
   phone: {
     ROOT_W: 130,
     ROOT_H: 50,
-    L1_W: 110,
+    L1_W: 125,
     L1_H: 29,
     L2_W: 110,
     L2_H: 27,
