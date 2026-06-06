@@ -30,48 +30,48 @@ const BREAKPOINTS = {
     DOT_R: 2,
   },
   tablet: {
-    ROOT_W:130,
-    ROOT_H: 48,
-    L1_W: 158,
-    L1_H: 32,
-    L2_W: 140,
-    L2_H: 28,
-    L3_W: 100,
-    L3_H: 24,
-    ROOT_FS: 10,
-    L1_FS: 16,
-    L2_FS: 16,
-    L3_FS: 16,
-    L1_GAP: 15,
-    L2_GAP: 10,
-    L3_GAP: 8,
-    ROOT_X: 52,
-    L1_X: 220,
-    L2_X: 400,
-    L3_X: 570,
+    ROOT_W: 145,
+    ROOT_H: 56,
+    L1_W: 210,
+    L1_H: 38,
+    L2_W: 220,
+    L2_H: 34,
+    L3_W: 115,
+    L3_H: 28,
+    ROOT_FS: 16,
+    L1_FS: 19,
+    L2_FS: 19,
+    L3_FS: 18,
+    L1_GAP: 22,
+    L2_GAP: 15,
+    L3_GAP: 12,
+    ROOT_X: 40,
+    L1_X: 250,
+    L2_X: 480,
+    L3_X: 670,
     DOT_R: 2.5,
   },
   desktop: {
-    ROOT_W:130,
-    ROOT_H: 48,
-    L1_W: 190,
-    L1_H: 32,
-    L2_W: 180,
-    L2_H: 28,
-    L3_W: 120,
-    L3_H: 24,
-    ROOT_FS: 10,
-    L1_FS: 19,
-    L2_FS: 19,
-    L3_FS: 19,
-    L1_GAP: 15,
-    L2_GAP: 10,
-    L3_GAP: 8,
-    ROOT_X: 60,
-    L1_X: 240,
-    L2_X: 450,
-    L3_X: 620,
-    DOT_R: 2.5,
+    ROOT_W: 210,
+    ROOT_H: 100,
+    L1_W: 300,
+    L1_H: 48,
+    L2_W: 260,
+    L2_H: 42,
+    L3_W: 150,
+    L3_H: 34,
+    ROOT_FS: 25,
+    L1_FS: 26,
+    L2_FS: 23,
+    L3_FS: 23,
+    L1_GAP: 35,
+    L2_GAP: 25,
+    L3_GAP: 15,
+    ROOT_X: 140,
+    L1_X: 420,
+    L2_X: 740,
+    L3_X: 1020,
+    DOT_R: 5,
   },
 } as const;
 
@@ -400,6 +400,7 @@ function NodeBox({
   w = 120,
   h = 36,
   fs = 10,
+  maxChars = 15,
 }: any) {
   return (
     <motion.g
@@ -439,7 +440,11 @@ function NodeBox({
               : "rgba(15,25,45,0.85)"
         }
         stroke={
-          highlight ? "#63B3ED" : active ? "#90CDF4" : "rgba(125, 198, 250,0.35)"
+          highlight
+            ? "#63B3ED"
+            : active
+              ? "#90CDF4"
+              : "rgba(125, 198, 250,0.35)"
         }
         strokeWidth={highlight ? 1.5 : 1}
       />
@@ -479,7 +484,7 @@ function NodeBox({
           fontFamily="'JetBrains Mono',monospace"
           fontWeight="500"
         >
-          {label.length > 16 ? label.slice(0, 15) + "…" : label}
+          {label.length > maxChars ? label.slice(0, maxChars) + "…" : label}
         </text>
       )}
     </motion.g>
@@ -594,8 +599,7 @@ export default function MRMHero() {
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, ease: "backOut" }}
-              // className="hidden md:flex"
-
+                // className="hidden md:flex"
               />
               <motion.rect
                 x={ROOT_X - ROOT_W / 2 - 5}
@@ -610,8 +614,7 @@ export default function MRMHero() {
                 strokeOpacity={0.3}
                 animate={{ scale: [1, 1.12, 1], opacity: [0.4, 0, 0.4] }}
                 transition={{ duration: 2.5, repeat: Infinity }}
-              className="flex items-end justify-end"
-
+                className="flex items-end justify-end"
               />
               <text
                 x={ROOT_X}
@@ -621,7 +624,7 @@ export default function MRMHero() {
                 fontSize={ROOT_FS}
                 fontFamily="'JetBrains Mono',monospace"
                 fontWeight="700"
-               className="text-[10px] md:text-xl"
+                className="text-[10px] md:text-xl lg:text-4xl"
               >
                 MRM
               </text>
@@ -633,7 +636,7 @@ export default function MRMHero() {
                 fontSize={ROOT_FS}
                 fontFamily="'JetBrains Mono',monospace"
                 fontWeight="700"
-                className="text-[10px] md:text-lg"
+                className="text-[10px] md:text-xl lg:text-3xl"
               >
                 Intelligence
               </text>
@@ -655,6 +658,7 @@ export default function MRMHero() {
                   w={n.w}
                   h={n.h}
                   fs={n.fs}
+                  maxChars={bp === "phone" ? 15 : 70}
                 />
               ))}
           </svg>
