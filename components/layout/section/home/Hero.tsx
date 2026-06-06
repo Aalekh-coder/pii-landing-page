@@ -63,7 +63,7 @@ const BREAKPOINTS = {
     ROOT_FS: 25,
     L1_FS: 26,
     L2_FS: 23,
-    L3_FS: 23,
+    L3_FS: 22,
     L1_GAP: 35,
     L2_GAP: 25,
     L3_GAP: 15,
