@@ -324,7 +324,8 @@ function TravellingDot({
   return (
     <motion.circle
       r={r}
-      fill="#90CDF4"
+      // fill="#90CDF4"
+      fill="#b5e2ff"
       filter="url(#glow)"
       initial={{ cx: x1, cy: y1, opacity: 0 }}
       animate={{
@@ -351,7 +352,8 @@ function AnimatedLine({
   x2,
   y2,
   delay = 0,
-  color = "#63B3ED",
+  // color = "#63B3ED",
+  color = "#dbf1ff",
   dotR = 3,
 }: any) {
   return (
@@ -362,7 +364,8 @@ function AnimatedLine({
         y1={y1}
         x2={x2}
         y2={y2}
-        stroke="rgba(99,179,237,0.15)"
+        // stroke="rgba(99,179,237,0.15)"
+        stroke="#dbf1ff"
         strokeWidth="1.5"
       />
       {/* draw-on line */}
@@ -414,7 +417,8 @@ function NodeBox({
           height={h + 8}
           rx={6}
           fill="none"
-          stroke="#63B3ED"
+          // stroke="#63B3ED"
+          stroke="#dbf1ff"
           strokeWidth="1.5"
           strokeOpacity="0.5"
           animate={{ scale: [1, 1.08, 1], opacity: [0.5, 1, 0.5] }}
@@ -429,13 +433,13 @@ function NodeBox({
         rx={4}
         fill={
           highlight
-            ? "rgba(99,179,237,0.18)"
+            ? "rgba(99,179,237,0.28)"
             : active
-              ? "rgba(99,179,237,0.12)"
+              ? "rgba(99,179,237,0.22)"
               : "rgba(15,25,45,0.85)"
         }
         stroke={
-          highlight ? "#63B3ED" : active ? "#90CDF4" : "rgba(99,179,237,0.35)"
+          highlight ? "#63B3ED" : active ? "#90CDF4" : "rgba(125, 198, 250,0.35)"
         }
         strokeWidth={highlight ? 1.5 : 1}
       />
@@ -445,7 +449,7 @@ function NodeBox({
             x={x}
             y={y - fs * 0.5}
             textAnchor="middle"
-            fill={highlight ? "#90CDF4" : "#CBD5E0"}
+            fill={highlight ? "#addfff" : "#CBD5E0"}
             fontSize={fs}
             fontFamily="'JetBrains Mono',monospace"
             fontWeight="600"
@@ -456,7 +460,7 @@ function NodeBox({
             x={x}
             y={y + fs * 1.0}
             textAnchor="middle"
-            fill={highlight ? "#90CDF4" : "#CBD5E0"}
+            fill={highlight ? "#addfff" : "#CBD5E0"}
             fontSize={fs}
             fontFamily="'JetBrains Mono',monospace"
             fontWeight="600"
@@ -470,7 +474,7 @@ function NodeBox({
           y={y + 1}
           textAnchor="middle"
           dominantBaseline="middle"
-          fill={highlight ? "#90CDF4" : "#CBD5E0"}
+          fill={highlight ? "#addfff" : "#CBD5E0"}
           fontSize={fs}
           fontFamily="'JetBrains Mono',monospace"
           fontWeight="500"
@@ -584,7 +588,8 @@ export default function MRMHero() {
                 height={ROOT_H}
                 rx={6}
                 fill="rgba(99,179,237,0.15)"
-                stroke="#63B3ED"
+                // stroke="#63B3ED"
+                stroke="#7cc6fc"
                 strokeWidth={2}
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -599,7 +604,8 @@ export default function MRMHero() {
                 height={ROOT_H + 10}
                 rx={8}
                 fill="none"
-                stroke="#63B3ED"
+                // stroke="#63B3ED"
+                stroke="#7cc6fc"
                 strokeWidth={1}
                 strokeOpacity={0.3}
                 animate={{ scale: [1, 1.12, 1], opacity: [0.4, 0, 0.4] }}
