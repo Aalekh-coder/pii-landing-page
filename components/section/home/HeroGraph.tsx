@@ -35,7 +35,7 @@ const BREAKPOINTS = {
     ROOT_H: 56,
     L1_W: 210,
     L1_H: 38,
-    L2_W: 220,
+    L2_W: 290,
     L2_H: 34,
     L3_W: 115,
     L3_H: 28,
@@ -46,10 +46,10 @@ const BREAKPOINTS = {
     L1_GAP: 22,
     L2_GAP: 15,
     L3_GAP: 12,
-    ROOT_X: 40,
-    L1_X: 250,
-    L2_X: 480,
-    L3_X: 670,
+    ROOT_X: -20,
+    L1_X: 200,
+    L2_X: 470,
+    L3_X: 730,
     DOT_R: 2.5,
   },
   desktop: {
@@ -57,7 +57,7 @@ const BREAKPOINTS = {
     ROOT_H: 100,
     L1_W: 300,
     L1_H: 48,
-    L2_W: 260,
+    L2_W: 350,
     L2_H: 42,
     L3_W: 150,
     L3_H: 34,
@@ -68,10 +68,10 @@ const BREAKPOINTS = {
     L1_GAP: 35,
     L2_GAP: 25,
     L3_GAP: 15,
-    ROOT_X: 140,
-    L1_X: 420,
+    ROOT_X: 100,
+    L1_X: 390,
     L2_X: 740,
-    L3_X: 1020,
+    L3_X: 1050,
     DOT_R: 5,
   },
 } as const;
@@ -511,23 +511,23 @@ export default function MRMHero() {
 
   return (
     <div
-      className="min-h-screen bg-[#070d1a] flex flex-col items-center justify-center overflow-hidden relative select-none "
+      className="min-h-screen bg-[#070d1a] flex flex-col  items-center justify-center overflow-hidden relative select-none "
       // style={{ fontFamily: "'JetBrains Mono', monospace" }}
     >
       {/* grid bg */}
-      <div
+      {/* <div
         className="absolute inset-0 opacity-[0.09]"
         style={{
           backgroundImage:
             "linear-gradient(rgba(99,179,237,1) 1px,transparent 1px),linear-gradient(90deg,rgba(99,179,237,1) 1px,transparent 1px)",
           backgroundSize: "32px 32px",
         }}
-      />
+      /> */}
       {/* ambient glows */}
       <div className="absolute top-1/3 left-1/4 w-125 h-125 bg-blue-700/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-cyan-500/8 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center lg:items-start relative z-10 pt-30">
+      <div className="container mx-auto flex flex-col-reverse gap-5 lg:flex-row items-center lg:items-start relative z-10 pt-30">
         {/* Left Side: Content */}
        <HeroInput />
 

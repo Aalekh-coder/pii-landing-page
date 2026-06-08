@@ -558,7 +558,7 @@ export const tree = {
         { id: "indian", label: "Indian No OSINT" },
         {
           id: "intl",
-          label: "International Intell.",
+          label: "International Intelligence",
           grandchildren: [
             { id: "gmail", label: "Gmail" },
             { id: "proton", label: "Proton Mail" },
