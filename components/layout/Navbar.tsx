@@ -58,7 +58,7 @@ export default function Navbar() {
             />
           </div>
 
-          <span className="text-xl font-semibold text-white">TSN Security</span>
+          <span className="text-xl font-semibold text-white">MRM Intelligence</span>
         </Link>
 
         {/* for desktop  */}

@@ -1,12 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Globe,
-  Newspaper,
-  Database,
-  MessageSquare,
-} from "lucide-react";
+import { useMemo } from "react";
+
+import { Globe, Newspaper, Database, MessageSquare } from "lucide-react";
 
 const nodes = [
   {
@@ -32,9 +29,17 @@ const nodes = [
 ];
 
 export default function SurfaceWebIllustration() {
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 15 }, () => ({
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+        duration: 3 + Math.random() * 4,
+      })),
+    [],
+  );
   return (
     <div className="relative h-[550px] w-full overflow-hidden rounded-3xl ">
-
       {/* Grid */}
       <div className="absolute inset-0 opacity-20">
         <div className="h-full w-full bg-[radial-gradient(rgba(59,130,246,0.4)_1px,transparent_1px)] [background-size:24px_24px]" />
@@ -44,10 +49,7 @@ export default function SurfaceWebIllustration() {
       <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/20 blur-[120px]" />
 
       {/* Connection Lines */}
-      <svg
-        className="absolute inset-0 h-full w-full"
-        viewBox="0 0 1000 600"
-      >
+      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1000 600">
         <motion.line
           x1="500"
           y1="300"
@@ -65,8 +67,6 @@ export default function SurfaceWebIllustration() {
             ease: "linear",
           }}
         />
-
-    
 
         <motion.line
           x1="500"
@@ -122,13 +122,9 @@ export default function SurfaceWebIllustration() {
       >
         <Globe className="mb-3 h-10 w-10 text-blue-400" />
 
-        <h3 className="text-2xl font-bold text-white">
-          Surface Web
-        </h3>
+        <h3 className="text-2xl font-bold text-white">Surface Web</h3>
 
-        <p className="mt-1 text-xs text-blue-300">
-          Public Intelligence
-        </p>
+        <p className="mt-1 text-xs text-blue-300">Public Intelligence</p>
       </motion.div>
 
       {/* Nodes */}
@@ -185,13 +181,9 @@ export default function SurfaceWebIllustration() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-white">
-                  {node.title}
-                </h4>
+                <h4 className="font-semibold text-white">{node.title}</h4>
 
-                <p className="text-sm text-slate-400">
-                  Indexed & Public
-                </p>
+                <p className="text-sm text-slate-400">Indexed & Public</p>
               </div>
             </div>
           </motion.div>
@@ -199,13 +191,13 @@ export default function SurfaceWebIllustration() {
       })}
 
       {/* Floating particles */}
-      {[...Array(15)].map((_, i) => (
+      {particles.map((particle, i) => (
         <motion.div
           key={i}
           className="absolute h-1.5 w-1.5 rounded-full bg-blue-400"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
+            left: `${particle.left}%`,
+            top: `${particle.top}%`,
           }}
           animate={{
             y: [-20, 20, -20],
@@ -213,12 +205,10 @@ export default function SurfaceWebIllustration() {
           }}
           transition={{
             repeat: Infinity,
-            duration: 3 + Math.random() * 4,
+            duration: particle.duration,
           }}
         />
       ))}
     </div>
   );
 }
-
-

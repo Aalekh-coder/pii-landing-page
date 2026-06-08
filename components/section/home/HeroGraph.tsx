@@ -2,6 +2,7 @@
 import { tree } from "@/data/home";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import HeroInput from "./HeroInput";
 
 /* ═══════════════════════════════════════════════════════════
    ★  RESPONSIVE CONFIG — tweak these per breakpoint  ★
@@ -523,27 +524,12 @@ export default function MRMHero() {
         }}
       />
       {/* ambient glows */}
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-blue-700/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-125 h-125 bg-blue-700/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-cyan-500/8 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center lg:items-start relative z-10 pt-30">
         {/* Left Side: Content */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="px-6 pb-5 lg:w-1/2"
-        >
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-3 md:mb-8">
-            MRM Intelligence <br />
-            <span className="text-blue-400">Platform</span>
-          </h1>
-          <p className="text-zinc-400 text-lg md:text-xl leading-relaxed max-w-xl">
-            A comprehensive and unified intelligence platform designed for deep
-            cyber investigations, real-time threat detection, and advanced OSINT
-            operations across the surface, deep, and dark web.
-          </p>
-        </motion.div>
+       <HeroInput />
 
         {/* Right Side: SVG Tree */}
         <div

@@ -368,17 +368,17 @@ export const deepWeb = [
         <path
           d="M32 12L46 18V28C46 38 40 46 32 50C24 46 18 38 18 28V18L32 12Z"
           stroke="#3B82F6"
-          stroke-width="2.5"
+          strokeWidth="2.5"
           fill="none"
         />
 
-        <circle cx="30" cy="28" r="6" stroke="#60A5FA" stroke-width="2.5" />
+        <circle cx="30" cy="28" r="6" stroke="#60A5FA" strokeWidth="2.5" />
 
         <path
           d="M35 33L40 38"
           stroke="#60A5FA"
-          stroke-width="2.5"
-          stroke-linecap="round"
+          strokeWidth="2.5"
+          strokeLinecap="round"
         />
       </svg>
     ),
@@ -398,7 +398,7 @@ export const deepWeb = [
           cy="32"
           r="22"
           stroke="#3B82F6"
-          stroke-width="2"
+          strokeWidth="2"
           opacity="0.4"
         />
 
@@ -407,7 +407,7 @@ export const deepWeb = [
           cy="32"
           r="14"
           stroke="#60A5FA"
-          stroke-width="2"
+          strokeWidth="2"
           opacity="0.7"
         />
 
@@ -421,26 +421,26 @@ export const deepWeb = [
         <path
           d="M32 13V27"
           stroke="#60A5FA"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
         <path
           d="M37 32H51"
           stroke="#60A5FA"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
         <path
           d="M32 37V51"
           stroke="#60A5FA"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
         <path
           d="M13 32H27"
           stroke="#60A5FA"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
       </svg>
     ),
@@ -455,7 +455,7 @@ export const deepWeb = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <circle cx="32" cy="32" r="22" stroke="#3B82F6" stroke-width="2.5" />
+        <circle cx="32" cy="32" r="22" stroke="#3B82F6" strokeWidth="2.5" />
 
         <circle cx="24" cy="24" r="4" fill="#60A5FA" />
         <circle cx="40" cy="24" r="4" fill="#60A5FA" />
@@ -464,20 +464,20 @@ export const deepWeb = [
         <path
           d="M24 24L40 24"
           stroke="#60A5FA"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
         <path
           d="M24 24L32 40"
           stroke="#60A5FA"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
         <path
           d="M40 24L32 40"
           stroke="#60A5FA"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
 
         <circle
@@ -486,7 +486,7 @@ export const deepWeb = [
           r="7"
           fill="#0F172A"
           stroke="#3B82F6"
-          stroke-width="2"
+          strokeWidth="2"
         />
       </svg>
     ),
@@ -494,47 +494,47 @@ export const deepWeb = [
   {
     title: "Quantum Security Interface",
     icon: (
-     <svg
-  width="64"
-  height="64"
-  viewBox="0 0 64 64"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <circle cx="32" cy="32" r="18" stroke="#3B82F6" stroke-width="2"/>
-  <circle cx="32" cy="32" r="5" fill="#60A5FA"/>
+      <svg
+        width="64"
+        height="64"
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="32" cy="32" r="18" stroke="#3B82F6" strokeWidth="2" />
+        <circle cx="32" cy="32" r="5" fill="#60A5FA" />
 
-  <path
-    d="M32 16C41 16 48 23 48 32"
-    stroke="#60A5FA"
-    stroke-width="2"
-    stroke-linecap="round"
-  />
+        <path
+          d="M32 16C41 16 48 23 48 32"
+          stroke="#60A5FA"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
 
-  <path
-    d="M32 48C23 48 16 41 16 32"
-    stroke="#60A5FA"
-    stroke-width="2"
-    stroke-linecap="round"
-  />
+        <path
+          d="M32 48C23 48 16 41 16 32"
+          stroke="#60A5FA"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
 
-  <path
-    d="M32 22L38 24V30C38 34 35 37 32 39C29 37 26 34 26 30V24L32 22Z"
-    fill="#0F172A"
-    stroke="#60A5FA"
-    stroke-width="2"
-  />
-</svg>
+        <path
+          d="M32 22L38 24V30C38 34 35 37 32 39C29 37 26 34 26 30V24L32 22Z"
+          fill="#0F172A"
+          stroke="#60A5FA"
+          strokeWidth="2"
+        />
+      </svg>
     ),
   },
 ];
-
 
 export const tree = {
   root: { id: "root", label: ["MRM", "Intelligence"] },
   branches: [
     {
-      id: "misc", label: "Miscellaneous Tools",
+      id: "misc",
+      label: "Miscellaneous Tools",
       children: [
         { id: "dth", label: "DTH Info" },
         { id: "gas", label: "GAS Info" },
@@ -542,7 +542,8 @@ export const tree = {
       ],
     },
     {
-      id: "domain", label: "Domain Intelligence",
+      id: "domain",
+      label: "Domain Intelligence",
       children: [
         { id: "creation", label: "Creation Data" },
         { id: "hosting", label: "Hosting Details" },
@@ -550,26 +551,32 @@ export const tree = {
       ],
     },
     {
-      id: "osint", label: "OSINT", highlight: true,
+      id: "osint",
+      label: "OSINT",
+      highlight: true,
       children: [
         { id: "indian", label: "Indian No OSINT" },
         {
-          id: "intl", label: "International Intell.", grandchildren: [
+          id: "intl",
+          label: "International Intell.",
+          grandchildren: [
             { id: "gmail", label: "Gmail" },
             { id: "proton", label: "Proton Mail" },
             { id: "outlook", label: "Outlook" },
             { id: "yahoo", label: "Yahoo India" },
-          ]
+          ],
         },
         { id: "email", label: "Email" },
       ],
     },
     {
-      id: "ip", label: "IP Investigation",
+      id: "ip",
+      label: "IP Investigation",
       children: [],
     },
     {
-      id: "crypto", label: "Crypto Investigation",
+      id: "crypto",
+      label: "Crypto Investigation",
       children: [
         { id: "wallet", label: "Wallet Creation" },
         { id: "paymail", label: "Payment Mail" },
@@ -577,7 +584,8 @@ export const tree = {
       ],
     },
     {
-      id: "nodal", label: "Nodal Lookup",
+      id: "nodal",
+      label: "Nodal Lookup",
       children: [],
     },
   ],

@@ -1,17 +1,14 @@
 "use client";
 
-
-import {  Variants } from "framer-motion";
-import HomeCapability from "@/components/layout/section/home/HomeCapability";
-import HomeAdvantage from "@/components/layout/section/home/HomeAdvantage";
-import Hero from "@/components/layout/section/home/Hero";
+import { Variants } from "framer-motion";
+import HomeCapability from "@/components/section/home/HomeCapability";
+import HomeAdvantage from "@/components/section/home/HomeAdvantage";
+import Hero from "@/components/section/home/HeroGraph";
 
 const Home = () => {
-
   return (
     <main className="bg-black text-white">
-      {/* hero section  */}
-     <Hero />
+      <Hero />
       <HomeCapability />
       <HomeAdvantage />
     </main>

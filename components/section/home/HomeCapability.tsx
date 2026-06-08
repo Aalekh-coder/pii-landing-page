@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import SurfaceWebIllustration from "@/components/spacial-componets/svgs/WebSurfase";
 import DeepWebIllustration from "@/components/spacial-componets/svgs/DeepWeb";
 import { deepWeb } from "@/data/home";
-import DarkWebHackerIcon from "@/components/spacial-componets/svgs/DarkWep";
 import HackerTerminal from "@/components/spacial-componets/svgs/DarkWep";
 
 const HomeCapability = () => {
