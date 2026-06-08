@@ -4,13 +4,13 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#070b2d] py-24 pt-32 lg:pt-40">
+    <section className="relative min-h-screen overflow-hidden bg-[#070b2d] py-24 pt-32 lg:pt-40 ">
       {/* Background Glow */}
       <div className="absolute inset-0">
         <div className="absolute left-1/2 top-32 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-blue-500/20 blur-[180px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
+      <div className="relative z-10 mx-auto max-w-5xl  px-6">
         <div className="grid gap-10 lg:grid-cols-2">
           {/* Contact Info Card */}
           <div className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-10 backdrop-blur-xl">
