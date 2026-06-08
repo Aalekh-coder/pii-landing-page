@@ -326,7 +326,7 @@ function TravellingDot({
     <motion.circle
       r={r}
       // fill="#90CDF4"
-      fill="#b5e2ff"
+      fill="#6bb9fa"
       filter="url(#glow)"
       initial={{ cx: x1, cy: y1, opacity: 0 }}
       animate={{
@@ -353,8 +353,7 @@ function AnimatedLine({
   x2,
   y2,
   delay = 0,
-  // color = "#63B3ED",
-  color = "#dbf1ff",
+  color = "#38a5ff",
   dotR = 3,
 }: any) {
   return (
@@ -365,8 +364,8 @@ function AnimatedLine({
         y1={y1}
         x2={x2}
         y2={y2}
-        // stroke="rgba(99,179,237,0.15)"
-        stroke="#dbf1ff"
+        className=""
+        stroke="#38a5ff"
         strokeWidth="1.5"
       />
       {/* draw-on line */}
@@ -382,6 +381,7 @@ function AnimatedLine({
         animate={{ pathLength: 1, opacity: 1 }}
         transition={{ delay, duration: 0.5, ease: "easeInOut" }}
         style={{ pathLength: 1 }}
+        rx={10}
       />
       {/* travelling glow dot — cross-browser safe */}
       <TravellingDot x1={x1} y1={y1} x2={x2} y2={y2} delay={delay} r={dotR} />
@@ -410,6 +410,7 @@ function NodeBox({
       transition={{ delay, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       onClick={onClick}
       style={{ cursor: "pointer" }}
+    
     >
       {active && (
         <motion.rect
@@ -417,10 +418,9 @@ function NodeBox({
           y={y - h / 2 - 4}
           width={w + 8}
           height={h + 8}
-          rx={6}
+          rx={10}
           fill="none"
-          // stroke="#63B3ED"
-          stroke="#dbf1ff"
+          stroke="#3358d7"
           strokeWidth="1.5"
           strokeOpacity="0.5"
           animate={{ scale: [1, 1.08, 1], opacity: [0.5, 1, 0.5] }}
@@ -432,7 +432,7 @@ function NodeBox({
         y={y - h / 2}
         width={w}
         height={h}
-        rx={4}
+        rx={10}
         fill={
           highlight
             ? "rgba(99,179,237,0.28)"
@@ -444,8 +444,8 @@ function NodeBox({
           highlight
             ? "#63B3ED"
             : active
-              ? "#90CDF4"
-              : "rgba(125, 198, 250,0.35)"
+              ? "#63B3ED"
+              : "#38a5ff"
         }
         strokeWidth={highlight ? 1.5 : 1}
       />
@@ -455,7 +455,7 @@ function NodeBox({
             x={x}
             y={y - fs * 0.5}
             textAnchor="middle"
-            fill={highlight ? "#addfff" : "#CBD5E0"}
+            fill={highlight ? "#63b3ed" : "#CBD5E0"}
             fontSize={fs}
             fontFamily="'JetBrains Mono',monospace"
             fontWeight="600"
@@ -466,7 +466,7 @@ function NodeBox({
             x={x}
             y={y + fs * 1.0}
             textAnchor="middle"
-            fill={highlight ? "#addfff" : "#CBD5E0"}
+            fill={highlight ? "#63b3ed" : "#CBD5E0"}
             fontSize={fs}
             fontFamily="'JetBrains Mono',monospace"
             fontWeight="600"
@@ -480,10 +480,10 @@ function NodeBox({
           y={y + 1}
           textAnchor="middle"
           dominantBaseline="middle"
-          fill={highlight ? "#addfff" : "#CBD5E0"}
+          fill={highlight ? "#63b3ed" : "#CBD5E0"}
           fontSize={fs}
           fontFamily="'JetBrains Mono',monospace"
-          fontWeight="500"
+          fontWeight="600"
         >
           {label.length > maxChars ? label.slice(0, maxChars) + "…" : label}
         </text>

@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import BlueButton from "@/components/spacial-componets/BlueButton";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 
