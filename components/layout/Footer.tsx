@@ -103,7 +103,7 @@ const Footer = () => {
                 />
               </div>
               <span className="text-xl font-bold tracking-tight">
-                TSN Security
+                MRM Intelligence
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -185,7 +185,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-gray-400 text-sm">
                 <Mail size={18} className="text-blue-400 shrink-0" />
-                <span>info@tsnsecurity.com</span>
+                <span>info@mrmintelligence.com</span>
               </li>
             </ul>
           </div>
@@ -218,7 +218,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-gray-500 text-xs">
-            © {currentYear} TSN Security. All rights reserved.
+            © {currentYear} MRM Intelligence. All rights reserved.
           </div>
           <div className="flex gap-8 text-xs text-gray-500">
             <Link
