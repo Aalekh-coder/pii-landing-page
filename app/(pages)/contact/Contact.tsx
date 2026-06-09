@@ -1,17 +1,44 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import {
   Mail,
   MapPin,
   MessageSquare,
   ShieldCheck,
-  Send,
   Shield,
   Lock,
+  ChevronDown,
+  Clock,
+  Cpu,
 } from "lucide-react";
+import { faq } from "@/data/contact";
 
 const Contact = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqItems = [
+    {
+      question: "What is the typical response time for critical inquiries?",
+      answer:
+        "Standard security inquiries are processed within 2-4 hours. Clients with active remediation protocols receive priority routing with a sub-15 minute response window via our emergency uplink.",
+      icon: <Clock size={18} />,
+    },
+    {
+      question: "Do you offer on-site security infrastructure audits?",
+      answer:
+        "Yes. Our field engineering team conducts physical and network-layer audits globally. These are typically scheduled following an initial remote threat assessment.",
+      icon: <Cpu size={18} />,
+    },
+    {
+      question: "Is communication via this form encrypted?",
+      answer:
+        "Absolutely. All data transmitted through our secure channel is encrypted using AES-256 at rest and TLS 1.3 in transit, ensuring zero-knowledge privacy for your inquiries.",
+      icon: <Lock size={18} />,
+    },
+  ];
+
   const containerVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -64,15 +91,6 @@ const Contact = () => {
                     Secure Link Status: Active
                   </span>
                 </div>
-
-                {/* Custom Spin Animation Integrated Here
-                // <div className="size-9 rounded-md bg-neutral-800 relative z-20 p-px overflow-hidden shadow-lg">
-                //   <div className="w-full h-full relative z-20 bg-[#0B1219] rounded-[4px] flex items-center justify-center">
-                //     <div className="size-1 bg-blue-500 rounded-full animate-pulse" />
-                //   </div>
-                //   <div className="absolute h-full w-full inset-0 [background-image:conic-gradient(at_center,transparent,rgba(59,130,246,0.8)_30%,transparent_30%)] animate-spin scale-[1.5]"></div>
-                //   <div className="absolute h-full w-full inset-0 [background-image:conic-gradient(at_center,transparent,rgba(239,68,68,0.6)_50%,transparent_30%)] animate-spin scale-[1.5] [animation-duration:3s]"></div>
-                // </div> */}
               </div>
 
               <div className="grid gap-6 md:grid-cols-2">
@@ -157,11 +175,7 @@ const Contact = () => {
                     <p className="text-xs font-semibold text-gray-400 uppercase tracking-tighter">
                       Command Center
                     </p>
-                    <p className="mt-1 text-sm font-medium">
-                      Silicon Valley HQ
-                      <br />
-                      Suite 404, Tech Plaza
-                    </p>
+                    <p className="mt-1 text-sm font-medium">Mumbai India</p>
                   </div>
                 </div>
               </div>
@@ -199,6 +213,62 @@ const Contact = () => {
             </div>
           </motion.aside>
         </div>
+
+        {/* FAQ SECTION */}
+        <motion.div variants={containerVariants} className="mt-24">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="h-px flex-1 bg-linear-to-r from-transparent to-white/10" />
+
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter bg-clip-text text-transparent bg-linear-to-b from-white to-gray-500">
+              FAQ
+            </h2>
+            <div className="h-px flex-1 bg-linear-to-l from-transparent to-white/10" />
+          </div>
+
+          <div className="space-y-4">
+            {faq.map((item, index) => (
+              <div
+                key={index}
+                className="rounded-2xl border border-white/5 bg-blue-500/[0.08] overflow-hidden transition-colors hover:border-white/10 relative"
+              >
+                <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-500/50 to-transparent" />
+                <button
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? null : index)
+                  }
+                  className="w-full flex items-center justify-between p-5 text-left transition-colors"
+                >
+                  <div className="flex items-center gap-4">
+                    <span className="text-sm font-semibold tracking-tight text-gray-200">
+                      {item.question}
+                    </span>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: openIndex === index ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-gray-600"
+                  >
+                    <ChevronDown size={18} />
+                  </motion.div>
+                </button>
+                <AnimatePresence>
+                  {openIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                      <div className="px-5 pb-5 pt-0 text-sm leading-relaxed text-gray-400 ml-10 border-l border-blue-500/20">
+                        {item.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </motion.div>
     </div>
   );
