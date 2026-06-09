@@ -244,7 +244,7 @@ const Footer = () => {
       </div>
 
       {/* Decorative Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent pointer-events-none" />
+    
     </footer>
   );
 };

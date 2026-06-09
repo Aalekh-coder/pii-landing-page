@@ -1,213 +1,207 @@
+"use client";
+
+import { motion, type Variants } from "framer-motion";
 import {
-  Phone,
   Mail,
   MapPin,
-  
-  ArrowRight,
+  MessageSquare,
+  ShieldCheck,
+  Send,
+  Shield,
+  Lock,
 } from "lucide-react";
 
-export default function ContactPage() {
+const Contact = () => {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, staggerChildren: 0.15, ease: "easeOut" },
+    },
+  };
+
   return (
-    <main className="min-h-screen bg-[#05011f] text-white overflow-x-hidden">
-      {/* Hero */}
-      <section className="relative py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#1d4ed855,transparent_70%)]" />
+    <div className="min-h-screen text-white bg-[#050B11] relative overflow-hidden">
+      {/* Ambient Background Glows */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
 
-        <div className="mx-auto max-w-5xl px-4 py-12 lg:px-8 pt-32 lg:pt-36">
-          <div className="text-center">
-            <span className="mb-6 inline-block rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm tracking-[3px] uppercase text-white">
-              Contact Center
-            </span>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="mx-auto max-w-5xl px-4 py-12 lg:px-8 pt-32 lg:pt-36 relative z-10"
+      >
+        {/* HEADER SECTION */}
+        <motion.div variants={containerVariants} className="mb-12">
+          <span className="mb-4 inline-flex items-center gap-2 border border-blue-400/30 rounded-full bg-blue-500/5 px-4 py-1.5 text-[10px] tracking-[4px] text-blue-300 uppercase font-bold shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+            <Lock size={12} className="text-blue-400" />
+            Secure Channel
+          </span>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-clip-text text-transparent bg-linear-to-b from-white to-gray-500">
+            Connect with Our Analysts
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg md:text-xl text-gray-400 leading-relaxed">
+            Have inquiries regarding threat intelligence, zero-trust frameworks,
+            or custom training? Our engineering team is ready to assist.
+          </p>
+        </motion.div>
 
-            <h1 className="text-5xl md:text-7xl font-bold">
-              <span className=" px-4 py-2 ">
-                Contact
-              </span>{" "}
-              Us
-            </h1>
+        <div className="grid gap-8 lg:grid-cols-[1fr_300px]">
+          {/* CONTACT FORM CONTAINER */}
+          <motion.section
+            variants={containerVariants}
+            className="rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden group"
+          >
+            <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-500/50 to-transparent" />
 
-            <p className="mx-auto mt-6 max-w-2xl text-gray-400">
-              Reach out to our cyber intelligence specialists, investigation
-              teams and digital security consultants.
-            </p>
-          </div>
-        </div>
-      </section>
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <div className="flex items-center justify-between pb-4 border-b border-white/5">
+                <div className="flex items-center gap-2 text-blue-400">
+                  <Shield size={18} />
+                  <span className="text-[11px] font-black uppercase tracking-[3px]">
+                    Secure Link Status: Active
+                  </span>
+                </div>
 
-      {/* Contact Cards */}
-      <section className="pb-20 pt-5">
-        <div className="mx-auto max-w-5xl px-4">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <InfoCard
-              icon={<Phone size={28} />}
-              title="+91 98765 43210"
-              description="Speak directly with our intelligence response team."
-              tag="Phone Number"
-            />
+                {/* Custom Spin Animation Integrated Here
+                // <div className="size-9 rounded-md bg-neutral-800 relative z-20 p-px overflow-hidden shadow-lg">
+                //   <div className="w-full h-full relative z-20 bg-[#0B1219] rounded-[4px] flex items-center justify-center">
+                //     <div className="size-1 bg-blue-500 rounded-full animate-pulse" />
+                //   </div>
+                //   <div className="absolute h-full w-full inset-0 [background-image:conic-gradient(at_center,transparent,rgba(59,130,246,0.8)_30%,transparent_30%)] animate-spin scale-[1.5]"></div>
+                //   <div className="absolute h-full w-full inset-0 [background-image:conic-gradient(at_center,transparent,rgba(239,68,68,0.6)_50%,transparent_30%)] animate-spin scale-[1.5] [animation-duration:3s]"></div>
+                // </div> */}
+              </div>
 
-            <InfoCard
-              icon={<Mail size={28} />}
-              title="contact@mrmintelligence.com"
-              description="Send inquiries regarding investigations, OSINT and training."
-              tag="Email Address"
-            />
+              <div className="grid gap-6 md:grid-cols-2">
+                <div className="space-y-2">
+                  <label className="text-xs font-medium uppercase tracking-wider text-white">
+                    First Name
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3 outline-none transition hover:bg-white/[0.05] focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 placeholder:text-gray-600"
+                    placeholder="Enter Name"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-medium uppercase tracking-wider text-white">
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3 outline-none transition hover:bg-white/[0.05] focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 placeholder:text-gray-600"
+                    placeholder="Enter Last Name"
+                  />
+                </div>
+              </div>
 
-            <InfoCard
-              icon={<MapPin size={28} />}
-              title="Mumbai, India"
-              description="Operations center serving clients globally."
-              tag="Our Location"
-            />
-          </div>
-        </div>
-      </section>
+              <div className="space-y-2">
+                <label className="text-xs font-medium uppercase tracking-wider text-white">
+                  Work Email
+                </label>
+                <input
+                  type="email"
+                  className="w-full rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3 outline-none transition hover:bg-white/[0.05] focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 placeholder:text-gray-600"
+                  placeholder="Enter you Email"
+                />
+              </div>
 
-      {/* Partner Strip */}
-      <section className="border-y border-white/10 bg-white/5 py-10">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="grid grid-cols-2 gap-8 text-center text-gray-500 md:grid-cols-5">
-            <div>PARTNER 01</div>
-            <div>PARTNER 02</div>
-            <div>PARTNER 03</div>
-            <div>PARTNER 04</div>
-            <div>PARTNER 05</div>
-          </div>
-        </div>
-      </section>
+              <div className="space-y-2">
+                <label className="text-xs font-medium uppercase tracking-wider text-white">
+                  Message / Inquiry
+                </label>
+                <textarea
+                  rows={5}
+                  className="w-full rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3 outline-none transition hover:bg-white/[0.05] focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 resize-none placeholder:text-gray-600"
+                  placeholder="How can we help secure your infrastructure?"
+                />
+              </div>
 
-      {/* Contact + Map */}
-      <section className="py-24">
-        <div className="mx-auto max-w-5xl px-4">
-          <div className="grid gap-12 lg:grid-cols-2">
-            {/* Left */}
-            <div>
-              <span className="text-sm tracking-[4px] uppercase text-blue-400">
-                Get In Touch
-              </span>
+              <button className="group flex w-full items-center justify-center gap-3 rounded-xl bg-linear-to-r from-blue-600 to-blue-500 py-4 font-bold text-white transition shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:brightness-110 active:scale-[0.98]">
+                Submit
+              </button>
+            </form>
+          </motion.section>
 
-              <p className="mt-6 max-w-lg text-gray-400">
-                Connect with our cyber intelligence experts for consulting,
-                investigations, threat analysis and enterprise security.
-              </p>
-              <h3 className="mt-12 mb-4 text-xl font-semibold">
-                Find Us Here
+          {/* INFO SIDEBAR */}
+          <motion.aside variants={containerVariants} className="space-y-6">
+            {/* HQ Info */}
+            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-colors hover:bg-white/[0.04]">
+              <h3 className="mb-6 text-[10px] font-bold tracking-[3px] text-gray-500 uppercase">
+                Global Nodes
               </h3>
 
-              <div className="overflow-hidden rounded-2xl border border-white/10">
-                <iframe
-                  src="https://maps.google.com/maps?q=india&t=&z=5&ie=UTF8&iwloc=&output=embed"
-                  className="h-[300px] w-full"
-                  loading="lazy"
-                />
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400">
+                    <Mail size={20} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-tighter">
+                      Communications
+                    </p>
+                    <p className="mt-1 text-sm font-medium">
+                      intel@pii-security.com
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400">
+                    <MapPin size={20} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-tighter">
+                      Command Center
+                    </p>
+                    <p className="mt-1 text-sm font-medium">
+                      Silicon Valley HQ
+                      <br />
+                      Suite 404, Tech Plaza
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Form */}
-            <div className="rounded-3xl border-b border-t border-blue-500 p-8 backdrop-blur-xl ">
-              <form className="space-y-5">
-                <div className="grid gap-5 md:grid-cols-2">
-                  <Input placeholder="Your Name" />
-                  <Input placeholder="Your Email" />
-                </div>
-
-                <Input placeholder="Subject" />
-
-                <textarea
-                  rows={6}
-                  placeholder="Your Message"
-                  className="w-full rounded-xl border-b border-blue-500 bg-[#0a062f] px-5 py-4 text-white outline-none focus:border-blue-500"
-                />
-
-                <button
-                  className="
-                  w-full
-                  rounded-full
-                  bg-linear-to-r from-blue-500 to-blue-700
-                  py-4
-                  font-medium
-                  text-white
-                  transition
-                  hover:opacity-90
-                "
-                >
-                  Submit Request
-                </button>
-              </form>
+            {/* Emergency Support Card */}
+            <div className="rounded-2xl border border-blue-500/20 bg-blue-500/5 p-6 transition-all hover:bg-blue-500/10">
+              <div className="mb-4 flex items-center gap-2 text-blue-300">
+                <ShieldCheck size={18} />
+                <span className="text-xs font-bold uppercase tracking-widest">
+                  Protocol 24/7
+                </span>
+              </div>
+              <p className="text-sm leading-relaxed text-gray-400">
+                Enterprise clients have access to our direct emergency response
+                uplink for active breach remediation.
+              </p>
             </div>
-          </div>
+
+            {/* Intelligence Reports Card */}
+            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition hover:bg-white/[0.04] overflow-hidden relative">
+              <div className="absolute top-1/3 left-1/4 w-125 h-125 bg-blue-700/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-cyan-500/8 rounded-full blur-3xl pointer-events-none" />
+
+              <div className="mb-4 flex items-center gap-2 text-gray-300">
+                <MessageSquare size={18} />
+                <span className="text-xs font-bold uppercase tracking-widest">
+                  Intel Reports
+                </span>
+              </div>
+              <p className="text-sm leading-relaxed text-gray-400">
+                Subscribe to our secure newsletter for weekly insights on
+                emerging threat vectors and zero-day mitigation strategies.
+              </p>
+            </div>
+          </motion.aside>
         </div>
-      </section>
-
-  
-    </main>
-  );
-}
-
-function Input({
-  placeholder,
-}: {
-  placeholder: string;
-}) {
-  return (
-    <input
-      placeholder={placeholder}
-      className="
-      w-full
-      rounded-xl
-      border-b
-      border-blue-500
-      bg-[#0a062f]
-      px-5
-      py-4
-      text-white
-      outline-none
-      focus:border-blue-500
-    "
-    />
-  );
-}
-
-function InfoCard({
-  icon,
-  title,
-  description,
-  tag,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  tag: string;
-}) {
-  return (
-    <div
-      className="
-      rounded-3xl
-      p-6
-      backdrop-blur-xl
-      transition
-      hover:border-blue-500/40
-      border-b border-blue-500
-      border-t
-    "
-    >
-      <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full border-b border-blue-500 text-blue-500 hover:border shadow shadow-blue-500">
-        {icon}
-      </div>
-
-      <h3 className="text-xl font-semibold">{title}</h3>
-
-      <p className="mt-4 text-gray-400">
-        {description}
-      </p>
-
-      <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4">
-        <span className="rounded-full bg-linear-to-r from-blue-500 to-blue-700 px-3 py-1 text-xs">
-          {tag}
-        </span>
-
-        <ArrowRight size={18} />
-      </div>
+      </motion.div>
     </div>
   );
-}
+};
 
+export default Contact;
