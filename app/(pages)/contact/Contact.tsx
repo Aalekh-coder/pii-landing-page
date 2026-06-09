@@ -9,35 +9,12 @@ import {
   ShieldCheck,
   Shield,
   Lock,
-  ChevronDown,
-  Clock,
-  Cpu,
+  ChevronDown
 } from "lucide-react";
 import { faq } from "@/data/contact";
 
 const Contact = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const faqItems = [
-    {
-      question: "What is the typical response time for critical inquiries?",
-      answer:
-        "Standard security inquiries are processed within 2-4 hours. Clients with active remediation protocols receive priority routing with a sub-15 minute response window via our emergency uplink.",
-      icon: <Clock size={18} />,
-    },
-    {
-      question: "Do you offer on-site security infrastructure audits?",
-      answer:
-        "Yes. Our field engineering team conducts physical and network-layer audits globally. These are typically scheduled following an initial remote threat assessment.",
-      icon: <Cpu size={18} />,
-    },
-    {
-      question: "Is communication via this form encrypted?",
-      answer:
-        "Absolutely. All data transmitted through our secure channel is encrypted using AES-256 at rest and TLS 1.3 in transit, ensuring zero-knowledge privacy for your inquiries.",
-      icon: <Lock size={18} />,
-    },
-  ];
 
   const containerVariants: Variants = {
     hidden: { opacity: 0, y: 30 },

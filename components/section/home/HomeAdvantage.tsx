@@ -7,143 +7,19 @@ import IdentifierTracingAnimation from "@/components/spacial-componets/svgs/Iden
 import IndianNumberOSINT from "@/components/spacial-componets/svgs/IndianNumberOSINT";
 import NodalLookupAnimation from "@/components/spacial-componets/svgs/NodalLookupAnimation";
 import UtilityIntelligenceAnimation from "@/components/spacial-componets/svgs/UtilityIntelligenceAnimation";
-import { motion, type Variants } from "framer-motion";
 import {
-  Activity,
-  BellRing,
-  CheckCircle,
-  Globe,
-  Mail,
-  History,
-  Wallet,
-  Network,
-  Server,
-  CarFront,
-  Tv,
-  Flame,
-  ShieldAlert,
-  PhoneCall,
-} from "lucide-react";
+  cryptoItems,
+  identifierTracingItems,
+  infrastructureItems,
+  intelligenceSpecialties,
+  miscellaneousItems,
+  nodalLookupItems,
+  osintOperationsItems,
+} from "@/data/home";
+import { motion, type Variants } from "framer-motion";
+import { CheckCircle } from "lucide-react";
 
 const HomeAdvantage = () => {
-  const identifierTracingItems = [
-    "Mobile Numbers (with integrated local lookup for subscriber & region details)",
-    "Email Addresses",
-    "Usernames & Aliases",
-    "Cryptocurrency Wallets",
-    "IP Addresses & Domains",
-    "Comprehensive Internet Monitoring",
-  ];
-
-  const osintOperationsItems = [
-    {
-      title: "Active OSINT Operations",
-      description:
-        "Equipped with advanced interactive tools for real-time, in-field intelligence gathering, including live verification, digital footprint expansion, and immediate cross-platform data correlation.",
-      icon: <Activity size={30} className="text-blue-500" />,
-    },
-    {
-      title: "Real-Time Alerts & Threat Detection",
-      description:
-        "Immediate notifications when monitored entities show new activity or appear in new data sources.",
-      icon: <BellRing size={30} className="text-blue-500" />,
-    },
-  ];
-
-  const intelligenceSpecialties = [
-    {
-      title: "Indian Number OSINT",
-      description:
-        "Identifies ownership, breach history, and social linkages across 300+ services with real-time digital footprint insights.",
-      icon: <CheckCircle size={24} className="text-blue-500" />,
-    },
-    {
-      title: "International Intelligence",
-      description:
-        "OSINT collection on global numbers using sourced datasets to support cross-border investigations and scam detection.",
-      icon: <Globe size={24} className="text-blue-500" />,
-    },
-    {
-      title: "Email Intelligence",
-      description:
-        "Analyzes leaked credentials and exposure in cyber incidents to determine if an email is compromised or malicious.",
-      icon: <Mail size={24} className="text-blue-500" />,
-    },
-    {
-      title: "Vehicle Intelligence",
-      description:
-        "Retrieves owner history, RC status, and traffic violations to assist in surveillance operations and case mapping.",
-      icon: <CarFront size={24} className="text-blue-500" />,
-    },
-  ];
-
-  const infrastructureItems = [
-    {
-      title: "Domain Intelligence",
-      description:
-        "Analyzes registration timelines and asset age to identify newly created fraud infrastructure and campaign stability.",
-      icon: <History size={24} className="text-blue-500" />,
-    },
-    {
-      title: "Hosting Analysis",
-      description:
-        "Maps backend IPs and technical stacks to uncover linked malicious networks and domains sharing the same server infrastructure.",
-      icon: <Server size={24} className="text-blue-500" />,
-    },
-  ];
-
-  const cryptoItems = [
-    {
-      title: "Blockchain Tracing",
-      description:
-        "Tracks wallet activity and payment trails across the blockchain to support financial attribution and identify laundering pathways.",
-      icon: <Wallet size={24} className="text-blue-500" />,
-    },
-    {
-      title: "Wallet Lifecycle",
-      description:
-        "Analyzes registration history to distinguish between long-term assets and throwaway wallets used for short-term criminal campaigns.",
-      icon: <History size={24} className="text-blue-500" />,
-    },
-    {
-      title: "Threat Correlation",
-      description:
-        "Compares multiple addresses to identify shared counterparties and paths, linking separate incidents to the same threat actor.",
-      icon: <Network size={24} className="text-blue-500" />,
-    },
-  ];
-
-  const miscellaneousItems = [
-    {
-      title: "DTH Information",
-      description:
-        "Retrieves subscriber data from major Indian DTH providers to correlate TV subscriptions with personal identifiers for address confirmation.",
-      icon: <Tv size={24} className="text-blue-500" />,
-    },
-    {
-      title: "Utility Profiling",
-      description:
-        "Identifies active LPG connections (HP, Indane, Bharat) to link utility services to households for background profiling and forensic verification.",
-      icon: <Flame size={24} className="text-blue-500" />,
-    },
-    {
-      title: "Investigative Toolkit",
-      description:
-        "Advanced tools for real-time GPS/IP tracking, FootMRM movement monitoring, and authorized remote device verification for LEA use.",
-      icon: <ShieldAlert size={24} className="text-blue-500" />,
-    },
-  ];
-
-  const nodalLookupItems = [
-    {
-      title: "Nodal Officer Database",
-      description:
-        "Comprehensive and up-to-date database of nodal officers for Indian telecom and ISP service providers, facilitating quick contact for lawful requests and escalations.",
-      icon: <PhoneCall size={24} className="text-blue-500" />,
-    },
-  ];
-
-
   const cardVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -157,7 +33,7 @@ const HomeAdvantage = () => {
   return (
     <section className="relative overflow-hidden bg-black py-24">
       <BgGradient>
-        <div className="container mx-auto px-6">
+        <div className="container  max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Content Left */}
             <motion.div
@@ -182,12 +58,12 @@ const HomeAdvantage = () => {
                     key={idx}
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: idx * 0.1 + 0.3 }} // Staggered animation
+                    transition={{ duration: 0.5, delay: idx * 0.1 + 0.3 }}
                     viewport={{ once: true }}
                     className="flex items-start gap-3 text-zinc-300 text-lg"
                   >
                     <CheckCircle
-                      className="text-blue-500 flex-shrink-0 mt-1"
+                      className="text-blue-500 shrink-0 mt-1"
                       size={20}
                     />
                     <span>{item}</span>
@@ -210,9 +86,9 @@ const HomeAdvantage = () => {
         </div>
       </BgGradient>
 
-      {/* New Section: OSINT Operations and Real-Time Alerts */}
-      <BgGradient className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] translate-x-1/2 rotate-[60deg] bg-gradient-to-br from-skt-500 via-blue-800 to-violet-500 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72rem]">
-        <div className="container mx-auto px-6 py-24">
+      {/* OSINT Operations and Real-Time Alerts */}
+      <BgGradient className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5translate-x-1/2 rotate-60 bg-linear-to-br from-skt-500 via-blue-800 to-violet-500 opacity-30 sm:left-[calc(50%-30rem)] sm:w-6xl">
+        <div className="container  max-w-6xl mx-auto px-6 py-24">
           <div className="text-center mb-16">
             <span className="inline-block text-blue-400 font-semibold tracking-wider uppercase text-sm mb-4">
               Operational Intelligence
@@ -253,9 +129,9 @@ const HomeAdvantage = () => {
         </div>
       </BgGradient>
 
-      {/* New Section: Indian Number OSINT */}
+      {/* Indian Number OSINT */}
       <BgGradient>
-        <div className="container mx-auto px-6 mt-24 lg:mt-32">
+        <div className="container  max-w-6xl mx-auto px-6 mt-24 lg:mt-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Visual Illustration Left */}
             <IndianNumberOSINT />
@@ -279,7 +155,7 @@ const HomeAdvantage = () => {
                 {intelligenceSpecialties.map((item, idx) => (
                   <motion.div
                     key={idx}
-                    className="p-4 rounded-2xl hover:bg-white/[0.03] border border-white/5 transition-colors group"
+                    className="p-4 rounded-2xl hover:bg-white/3 border border-white/5 transition-colors group"
                   >
                     <div className="flex items-center gap-3 mb-2">
                       {item.icon}
@@ -296,9 +172,9 @@ const HomeAdvantage = () => {
         </div>
       </BgGradient>
 
-      {/* New Section: Infrastructure & Technical Intelligence */}
+      {/* Infrastructure & Technical Intelligence */}
       <BgGradient>
-        <div className="container mx-auto px-6 mt-24 lg:mt-32">
+        <div className="container max-w-6xl mx-auto px-6 mt-24 lg:mt-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Content Left */}
             <motion.div
@@ -322,7 +198,7 @@ const HomeAdvantage = () => {
                 {infrastructureItems.map((item, idx) => (
                   <motion.div
                     key={idx}
-                    className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-blue-500/50 transition-all group"
+                    className="p-6 rounded-2xl bg-white/2 border border-white/5 hover:border-blue-500/50 transition-all group"
                   >
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-2 rounded-lg bg-blue-500/10 text-blue-500">
@@ -344,9 +220,9 @@ const HomeAdvantage = () => {
         </div>
       </BgGradient>
 
-      {/* New Section: Crypto & Blockchain Intelligence */}
-      <BgGradient className="relative right-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-blue-900/20 via-indigo-900/20 to-transparent opacity-30 sm:right-[calc(50%-30rem)] sm:w-[72rem]">
-        <div className="container mx-auto px-6 mt-24 lg:mt-32">
+      {/* Crypto & Blockchain Intelligence */}
+      <BgGradient className="relative right-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-blue-900/20 via-indigo-900/20 to-transparent opacity-30 sm:right-[calc(50%-30rem)] sm:w-6xl">
+        <div className="container  max-w-6xl mx-auto px-6 mt-24 lg:mt-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Visual Left - Themed Placeholder */}
             <CryptoInvestigationVisual />
@@ -370,7 +246,7 @@ const HomeAdvantage = () => {
                 {cryptoItems.map((item, idx) => (
                   <motion.div
                     key={idx}
-                    className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-blue-500/40 transition-all group"
+                    className="p-5 rounded-2xl bg-white/2 border border-white/5 hover:border-blue-500/40 transition-all group"
                   >
                     <div className="flex items-center gap-4 mb-2">
                       <div className="p-2 rounded-lg bg-blue-500/10 text-blue-500">
@@ -389,9 +265,9 @@ const HomeAdvantage = () => {
         </div>
       </BgGradient>
 
-      {/* New Section: Miscellaneous & Specialized Tools */}
+      {/* Miscellaneous & Specialized Tools */}
       <BgGradient>
-        <div className="container mx-auto px-6 mt-24 lg:mt-32">
+        <div className="container  max-w-6xl mx-auto px-6 mt-24 lg:mt-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Content Left */}
             <motion.div
@@ -407,14 +283,15 @@ const HomeAdvantage = () => {
                 Utility & Investigative Toolkit
               </h2>
               <p className="text-zinc-400 text-lg mb-10 max-w-xl">
-                Broaden your investigative reach with specialized lookups for utility connections and advanced real-time field tools.
+                Broaden your investigative reach with specialized lookups for
+                utility connections and advanced real-time field tools.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {miscellaneousItems.map((item, idx) => (
                   <motion.div
                     key={idx}
-                    className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-blue-500/50 transition-all group"
+                    className="p-6 rounded-2xl bg-white/2 border border-white/5 hover:border-blue-500/50 transition-all group"
                   >
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-2 rounded-lg bg-blue-500/10 text-blue-500">
@@ -436,12 +313,12 @@ const HomeAdvantage = () => {
         </div>
       </BgGradient>
 
-      {/* New Section: Nodal Lookup Intelligence */}
-      <BgGradient className="relative right-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-blue-900/20 via-purple-900/20 to-transparent opacity-30 sm:right-[calc(50%-30rem)] sm:w-[72rem]">
-        <div className="container mx-auto px-6 mt-24 lg:mt-32">
+      {/* Nodal Lookup Intelligence */}
+      <BgGradient className="relative right-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-blue-900/20 via-purple-900/20 to-transparent opacity-30 sm:right-[calc(50%-30rem)] sm:w-6xl">
+        <div className="container max-w-6xl mx-auto px-6 mt-24 lg:mt-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Visual Left - Themed Placeholder */}
-           <NodalLookupAnimation />
+            <NodalLookupAnimation />
 
             {/* Content Right */}
             <motion.div
@@ -462,7 +339,7 @@ const HomeAdvantage = () => {
                 {nodalLookupItems.map((item, idx) => (
                   <motion.div
                     key={idx}
-                    className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-blue-500/40 transition-all group"
+                    className="p-5 rounded-2xl bg-white/2 border border-white/5 hover:border-blue-500/40 transition-all group"
                   >
                     <div className="flex items-center gap-4 mb-2">
                       <div className="p-2 rounded-lg bg-blue-500/10 text-blue-500">

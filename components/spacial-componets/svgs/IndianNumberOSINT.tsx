@@ -1,13 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Smartphone,
-  ShieldAlert,
-  MapPin,
-  User,
-  Globe,
-} from "lucide-react";
+import { Smartphone, ShieldAlert, MapPin, User, Globe } from "lucide-react";
 
 export default function IndianNumberOSINT() {
   const nodes = [
@@ -39,7 +33,6 @@ export default function IndianNumberOSINT() {
 
   return (
     <div className="relative w-full h-[500px] overflow-hidden rounded-3xl ">
-
       {/* Background Grid */}
       <div
         className="
@@ -105,13 +98,9 @@ export default function IndianNumberOSINT() {
       >
         <Smartphone size={42} className="text-white mb-2" />
 
-        <div className="text-white text-xs font-semibold">
-          +91 XXXXXXXX
-        </div>
+        <div className="text-white text-xs font-semibold">+91 XXXXXXXX</div>
 
-        <div className="text-[10px] text-blue-100">
-          Intelligence Scan
-        </div>
+        <div className="text-[10px] text-blue-100">Intelligence Scan</div>
       </motion.div>
 
       {/* Nodes */}
@@ -146,14 +135,9 @@ export default function IndianNumberOSINT() {
                 items-center justify-center
               "
             >
-              <Icon
-                size={26}
-                className="text-blue-400 mb-2"
-              />
+              <Icon size={26} className="text-blue-400 mb-2" />
 
-              <span className="text-xs text-white">
-                {node.label}
-              </span>
+              <span className="text-xs text-white">{node.label}</span>
             </div>
           </motion.div>
         );
@@ -178,7 +162,7 @@ export default function IndianNumberOSINT() {
             top-1/2
             h-[2px]
             w-[180px]
-            bg-gradient-to-r
+            bg-linear-to-r
             from-transparent
             via-blue-400
             to-transparent

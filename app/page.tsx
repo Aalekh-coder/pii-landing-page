@@ -1,6 +1,5 @@
 "use client";
 
-import { Variants } from "framer-motion";
 import HomeCapability from "@/components/section/home/HomeCapability";
 import HomeAdvantage from "@/components/section/home/HomeAdvantage";
 import Hero from "@/components/section/home/HeroGraph";

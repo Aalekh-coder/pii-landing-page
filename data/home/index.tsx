@@ -1,4 +1,24 @@
-import { Car, Globe, Search, Shield, Smartphone, Wrench } from "lucide-react";
+import {
+  Car,
+  Search,
+  Shield,
+  Smartphone,
+  Wrench,
+  Activity,
+  Globe,
+  BellRing,
+  CheckCircle,
+  Mail,
+  CarFront,
+  PhoneCall,
+  ShieldAlert,
+  Flame,
+  Tv,
+  Network,
+  Wallet,
+  History,
+  Server,
+} from "lucide-react";
 
 export const intelligenceCategories = [
   {
@@ -590,3 +610,120 @@ export const tree = {
     },
   ],
 };
+
+export const osintOperationsItems = [
+  {
+    title: "Active OSINT Operations",
+    description:
+      "Equipped with advanced interactive tools for real-time, in-field intelligence gathering, including live verification, digital footprint expansion, and immediate cross-platform data correlation.",
+    icon: <Activity size={30} className="text-blue-500" />,
+  },
+  {
+    title: "Real-Time Alerts & Threat Detection",
+    description:
+      "Immediate notifications when monitored entities show new activity or appear in new data sources.",
+    icon: <BellRing size={30} className="text-blue-500" />,
+  },
+];
+
+export const identifierTracingItems = [
+  "Mobile Numbers (with integrated local lookup for subscriber & region details)",
+  "Email Addresses",
+  "Usernames & Aliases",
+  "Cryptocurrency Wallets",
+  "IP Addresses & Domains",
+  "Comprehensive Internet Monitoring",
+];
+
+export const intelligenceSpecialties = [
+  {
+    title: "Indian Number OSINT",
+    description:
+      "Identifies ownership, breach history, and social linkages across 300+ services with real-time digital footprint insights.",
+    icon: <CheckCircle size={24} className="text-blue-500" />,
+  },
+  {
+    title: "International Intelligence",
+    description:
+      "OSINT collection on global numbers using sourced datasets to support cross-border investigations and scam detection.",
+    icon: <Globe size={24} className="text-blue-500" />,
+  },
+  {
+    title: "Email Intelligence",
+    description:
+      "Analyzes leaked credentials and exposure in cyber incidents to determine if an email is compromised or malicious.",
+    icon: <Mail size={24} className="text-blue-500" />,
+  },
+  {
+    title: "Vehicle Intelligence",
+    description:
+      "Retrieves owner history, RC status, and traffic violations to assist in surveillance operations and case mapping.",
+    icon: <CarFront size={24} className="text-blue-500" />,
+  },
+];
+
+export const infrastructureItems = [
+  {
+    title: "Domain Intelligence",
+    description:
+      "Analyzes registration timelines and asset age to identify newly created fraud infrastructure and campaign stability.",
+    icon: <History size={24} className="text-blue-500" />,
+  },
+  {
+    title: "Hosting Analysis",
+    description:
+      "Maps backend IPs and technical stacks to uncover linked malicious networks and domains sharing the same server infrastructure.",
+    icon: <Server size={24} className="text-blue-500" />,
+  },
+];
+
+export const cryptoItems = [
+  {
+    title: "Blockchain Tracing",
+    description:
+      "Tracks wallet activity and payment trails across the blockchain to support financial attribution and identify laundering pathways.",
+    icon: <Wallet size={24} className="text-blue-500" />,
+  },
+  {
+    title: "Wallet Lifecycle",
+    description:
+      "Analyzes registration history to distinguish between long-term assets and throwaway wallets used for short-term criminal campaigns.",
+    icon: <History size={24} className="text-blue-500" />,
+  },
+  {
+    title: "Threat Correlation",
+    description:
+      "Compares multiple addresses to identify shared counterparties and paths, linking separate incidents to the same threat actor.",
+    icon: <Network size={24} className="text-blue-500" />,
+  },
+];
+
+export const miscellaneousItems = [
+  {
+    title: "DTH Information",
+    description:
+      "Retrieves subscriber data from major Indian DTH providers to correlate TV subscriptions with personal identifiers for address confirmation.",
+    icon: <Tv size={24} className="text-blue-500" />,
+  },
+  {
+    title: "Utility Profiling",
+    description:
+      "Identifies active LPG connections (HP, Indane, Bharat) to link utility services to households for background profiling and forensic verification.",
+    icon: <Flame size={24} className="text-blue-500" />,
+  },
+  {
+    title: "Investigative Toolkit",
+    description:
+      "Advanced tools for real-time GPS/IP tracking, FootMRM movement monitoring, and authorized remote device verification for LEA use.",
+    icon: <ShieldAlert size={24} className="text-blue-500" />,
+  },
+];
+
+export const nodalLookupItems = [
+  {
+    title: "Nodal Officer Database",
+    description:
+      "Comprehensive and up-to-date database of nodal officers for Indian telecom and ISP service providers, facilitating quick contact for lawful requests and escalations.",
+    icon: <PhoneCall size={24} className="text-blue-500" />,
+  },
+];

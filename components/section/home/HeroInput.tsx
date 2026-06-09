@@ -22,7 +22,7 @@ const HeroInput = () => {
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="px-6 pb-20 lg:w-1/2 lg:pl-20 lg:pt-8"
+        className="px-6 pb-20 lg:w-1/2  lg:pt-8"
       >
         <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-3 md:mb-8 text-center lg:text-left">
           MRM Intelligence <br />

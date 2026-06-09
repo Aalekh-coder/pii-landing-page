@@ -410,7 +410,6 @@ function NodeBox({
       transition={{ delay, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       onClick={onClick}
       style={{ cursor: "pointer" }}
-    
     >
       {active && (
         <motion.rect
@@ -440,13 +439,7 @@ function NodeBox({
               ? "rgba(99,179,237,0.22)"
               : "rgba(15,25,45,0.85)"
         }
-        stroke={
-          highlight
-            ? "#63B3ED"
-            : active
-              ? "#63B3ED"
-              : "#38a5ff"
-        }
+        stroke={highlight ? "#63B3ED" : active ? "#63B3ED" : "#38a5ff"}
         strokeWidth={highlight ? 1.5 : 1}
       />
       {Array.isArray(label) ? (
@@ -510,26 +503,14 @@ export default function MRMHero() {
   const toggle = (id: string) => setActive((p) => (p === id ? null : id));
 
   return (
-    <div
-      className="min-h-screen bg-[#070d1a] flex flex-col  items-center justify-center overflow-hidden relative select-none "
-      // style={{ fontFamily: "'JetBrains Mono', monospace" }}
-    >
-      {/* grid bg */}
-      {/* <div
-        className="absolute inset-0 opacity-[0.09]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(99,179,237,1) 1px,transparent 1px),linear-gradient(90deg,rgba(99,179,237,1) 1px,transparent 1px)",
-          backgroundSize: "32px 32px",
-        }}
-      /> */}
+    <div className="min-h-screen bg-[#070d1a] flex flex-col  items-center justify-center overflow-hidden relative select-none ">
       {/* ambient glows */}
       <div className="absolute top-1/3 left-1/4 w-125 h-125 bg-blue-700/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-cyan-500/8 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto flex flex-col-reverse gap-5 lg:flex-row items-center lg:items-start relative z-10 pt-30">
+      <div className="container mx-auto  max-w-6xl flex flex-col-reverse gap-5 lg:flex-row items-center lg:items-start relative z-10 pt-30">
         {/* Left Side: Content */}
-       <HeroInput />
+        <HeroInput />
 
         {/* Right Side: SVG Tree */}
         <div

@@ -50,7 +50,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2">
           <div className="h-14 w-14">
             <Image
-            loading="eager"
+              loading="eager"
               src="/layout/nav/TSN LOGO.webp"
               width={1000}
               height={1000}
@@ -58,7 +58,9 @@ export default function Navbar() {
             />
           </div>
 
-          <span className="text-xl font-semibold text-white">MRM Intelligence</span>
+          <span className="text-xl font-semibold text-white">
+            MRM Intelligence
+          </span>
         </Link>
 
         {/* for desktop  */}
@@ -328,7 +330,7 @@ export default function Navbar() {
                   <Link href="/" className="flex items-center gap-2">
                     <div className="h-10 w-10">
                       <Image
-                      loading="eager"
+                        loading="eager"
                         src="/layout/nav/TSN LOGO.webp"
                         width={1000}
                         height={1000}
@@ -565,7 +567,7 @@ export default function Navbar() {
                 </SheetClose>
 
                 <div className="mt-auto pb-10">
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-4 rounded-2xl shadow-lg active:scale-95 transition-all">
+                  <button className="w-full bg-linear-to-r from-blue-600 to-blue-700 text-white font-semibold py-4 rounded-2xl shadow-lg active:scale-95 transition-all">
                     Get Started
                   </button>
                 </div>
