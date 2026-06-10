@@ -137,7 +137,7 @@ export default function CryptoInvestigationVisual() {
           className="
   flex h-40 w-40 items-center justify-center
   rounded-full
-  bg-gradient-to-br
+  bg-linear-to-br
   from-cyan-500
   via-blue-600
   to-indigo-700
@@ -302,6 +302,7 @@ export default function CryptoInvestigationVisual() {
           w-[420px]
           -translate-x-1/2
           -translate-y-1/2
+          -z-10
         "
       >
         <div

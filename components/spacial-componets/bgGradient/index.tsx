@@ -19,7 +19,7 @@ export default function BgGradient({
           className={
             className
               ? className
-              : `relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-br from-blue-500 via-blue-800 to-pink-500 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72rem]`
+              : `relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-br from-blue-500 via-blue-800 to-pink-500 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72rem]`
           }
         />
       </div>

@@ -46,10 +46,10 @@ const BREAKPOINTS = {
     L1_GAP: 22,
     L2_GAP: 15,
     L3_GAP: 12,
-    ROOT_X: -20,
+    ROOT_X: 0,
     L1_X: 200,
-    L2_X: 470,
-    L3_X: 730,
+    L2_X: 460,
+    L3_X: 690,
     DOT_R: 2.5,
   },
   desktop: {
@@ -68,10 +68,10 @@ const BREAKPOINTS = {
     L1_GAP: 35,
     L2_GAP: 25,
     L3_GAP: 15,
-    ROOT_X: 100,
-    L1_X: 390,
+    ROOT_X: 120,
+    L1_X: 400,
     L2_X: 740,
-    L3_X: 1050,
+    L3_X: 1010,
     DOT_R: 5,
   },
 } as const;
@@ -508,13 +508,10 @@ export default function MRMHero() {
       <div className="absolute top-1/3 left-1/4 w-125 h-125 bg-blue-700/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-cyan-500/8 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto  max-w-6xl flex flex-col-reverse gap-5 lg:flex-row items-center lg:items-start relative z-10 pt-30">
-        {/* Left Side: Content */}
-        <HeroInput />
-
-        {/* Right Side: SVG Tree */}
+      <div className="container mx-auto  max-w-6xl flex flex-col-reverse gap-5 lg:flex-row lg:gap-2 items-center lg:items-start relative z-10 pt-30">
+        {/* graph*/}
         <div
-          className="z-10  flex justify-center overflow-hidden px-2 lg:w-1/2"
+          className="z-10 flex justify-center overflow-hidden px-2 lg:w-1/2"
           style={{ WebkitOverflowScrolling: "touch" }}
         >
           <svg
@@ -630,6 +627,9 @@ export default function MRMHero() {
               ))}
           </svg>
         </div>
+
+        {/*  Content */}
+        <HeroInput />
       </div>
     </div>
   );

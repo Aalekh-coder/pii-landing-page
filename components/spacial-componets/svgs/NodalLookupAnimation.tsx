@@ -40,7 +40,6 @@ const providers = [
 export default function NodalLookupAnimation() {
   return (
     <div className="relative h-[520px] overflow-hidden rounded-3xl ">
-
       {/* Grid */}
       <div
         className="
@@ -148,7 +147,7 @@ export default function NodalLookupAnimation() {
           items-center
           justify-center
           rounded-full
-          bg-gradient-to-br
+          bg-linear-to-br
           from-cyan-500
           via-blue-600
           to-indigo-700
@@ -159,13 +158,9 @@ export default function NodalLookupAnimation() {
         </div>
 
         <div className="mt-4 text-center">
-          <div className="text-sm font-semibold text-white">
-            NODAL HUB
-          </div>
+          <div className="text-sm font-semibold text-white">NODAL HUB</div>
 
-          <div className="text-xs text-cyan-300">
-            Telecom Coordination
-          </div>
+          <div className="text-xs text-cyan-300">Telecom Coordination</div>
         </div>
       </motion.div>
 
@@ -205,14 +200,9 @@ export default function NodalLookupAnimation() {
                 backdrop-blur-xl
               "
             >
-              <Icon
-                size={24}
-                className="mb-2 text-cyan-400"
-              />
+              <Icon size={24} className="mb-2 text-cyan-400" />
 
-              <span className="text-xs text-white">
-                {node.label}
-              </span>
+              <span className="text-xs text-white">{node.label}</span>
             </div>
           </motion.div>
         );
@@ -270,6 +260,7 @@ export default function NodalLookupAnimation() {
           w-[300px]
           -translate-x-1/2
           -translate-y-1/2
+          
         "
       >
         <UserCheck
@@ -311,6 +302,7 @@ export default function NodalLookupAnimation() {
           w-[420px]
           -translate-x-1/2
           -translate-y-1/2
+          -z-10
         "
       >
         <div

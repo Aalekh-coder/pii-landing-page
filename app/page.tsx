@@ -8,8 +8,8 @@ const Home = () => {
   return (
     <main className="bg-black text-white">
       <Hero />
-      <HomeCapability />
-      <HomeAdvantage />
+      {/* <HomeCapability />
+      <HomeAdvantage /> */}
     </main>
   );
 };

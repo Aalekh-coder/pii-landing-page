@@ -32,7 +32,7 @@ export default function IndianNumberOSINT() {
   ];
 
   return (
-    <div className="relative w-full h-[500px] overflow-hidden rounded-3xl ">
+    <div className="relative w-full h-125 overflow-hidden rounded-3xl ">
       {/* Background Grid */}
       <div
         className="
@@ -87,7 +87,7 @@ export default function IndianNumberOSINT() {
           w-32
           h-32
           rounded-3xl
-          bg-gradient-to-br
+          bg-linear-to-br
           from-blue-500
           to-indigo-700
           flex
@@ -142,37 +142,6 @@ export default function IndianNumberOSINT() {
           </motion.div>
         );
       })}
-
-      {/* Data Streams */}
-      {[0, 1, 2, 3].map((i) => (
-        <motion.div
-          key={i}
-          animate={{
-            opacity: [0, 1, 0],
-            scaleX: [0.3, 1, 0.3],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 2,
-            delay: i * 0.4,
-          }}
-          className="
-            absolute
-            left-1/2
-            top-1/2
-            h-[2px]
-            w-[180px]
-            bg-linear-to-r
-            from-transparent
-            via-blue-400
-            to-transparent
-            origin-center
-          "
-          style={{
-            transform: `translate(-50%,-50%) rotate(${i * 90}deg)`,
-          }}
-        />
-      ))}
 
       {/* Floating Tags */}
       {[

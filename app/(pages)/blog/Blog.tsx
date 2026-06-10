@@ -32,7 +32,7 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen bg-[#050B11] text-white">
-      <div className="mx-auto max-w-5xl px-4 py-12 lg:px-8 pt-32 lg:pt-36">
+      <div className="mx-auto max-w-6xl px-4 py-12 lg:px-8 pt-32 lg:pt-36">
         {/* HERO */}
         <section className="overflow-hidden rounded-xl border border-white/10 bg-[#0B1219]">
           <div className="grid lg:grid-cols-2">
@@ -60,7 +60,7 @@ export default function BlogPage() {
               </Link>
             </div>
 
-            <div className="relative min-h-[400px]">
+            <div className="relative min-h-100">
               <Image
                 src="/blog/blog-hero.jpg"
                 alt="hero image"
@@ -130,7 +130,7 @@ export default function BlogPage() {
             {/* featured */}
             <article className="overflow-hidden rounded-lg border border-white/10 bg-[#111820]">
               <div className="grid md:grid-cols-2">
-                <div className="relative min-h-[350px]">
+                <div className="relative min-h-87.5">
                   <Image
                     src="https://i.pinimg.com/736x/ad/08/1c/ad081ce1f8037a80ba08bcbeeefdead7.jpg"
                     alt=""

@@ -41,7 +41,6 @@ const nodes = [
 export default function UtilityIntelligenceAnimation() {
   return (
     <div className="relative h-[550px] w-full overflow-hidden rounded-3xl">
-
       {/* Grid */}
       <div
         className="
@@ -161,7 +160,7 @@ export default function UtilityIntelligenceAnimation() {
           className="
             flex h-40 w-40 items-center justify-center
             rounded-full
-            bg-gradient-to-br
+            bg-linear-to-br
             from-cyan-500
             via-blue-600
             to-indigo-700
@@ -212,14 +211,9 @@ export default function UtilityIntelligenceAnimation() {
                 backdrop-blur-xl
               "
             >
-              <Icon
-                size={24}
-                className="mb-2 text-cyan-400"
-              />
+              <Icon size={24} className="mb-2 text-cyan-400" />
 
-              <span className="text-xs text-white">
-                {node.label}
-              </span>
+              <span className="text-xs text-white">{node.label}</span>
             </div>
           </motion.div>
         );
@@ -277,6 +271,7 @@ export default function UtilityIntelligenceAnimation() {
           w-[320px]
           -translate-x-1/2
           -translate-y-1/2
+         
         "
       >
         <Search
@@ -318,6 +313,7 @@ export default function UtilityIntelligenceAnimation() {
           w-[450px]
           -translate-x-1/2
           -translate-y-1/2
+           -z-10
         "
       >
         <div

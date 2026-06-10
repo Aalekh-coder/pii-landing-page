@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -33,6 +33,15 @@ export default function Navbar() {
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(
     null,
   );
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMobileSection = (section: string) => {
     setOpenMobileSection(openMobileSection === section ? null : section);
@@ -44,8 +53,22 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-6 left-1/2 z-50 -translate-x-1/2">
-      <nav className="flex items-center gap-3 rounded-3xl  border-blue-400/80 border-b  bg-black/40 px-6 py-3 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] w-[90vw] lg:w-fit lg:min-w-[90vw] justify-between transition-all duration-300 ">
+    <header
+      className={`
+    fixed
+    left-1/2
+    -translate-x-1/2
+    z-50
+    transition-all
+    duration-500
+    ${isScrolled ? "top-0 w-full" : "top-5 w-[92vw] max-w-7xl"}
+  `}
+    >
+      <nav
+        className={`flex items-center gap-3 border-blue-400/80 border-b bg-black/40 px-6 py-3 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] justify-between transition-all duration-300 w-full ${
+          isScrolled ? "rounded-none lg:px-20" : "rounded-3xl"
+        }`}
+      >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div className="h-14 w-14">
@@ -315,7 +338,6 @@ export default function Navbar() {
             </div>
           </button>
         </div>
-        {/* </div> */}
 
         {/* for mobile  */}
         <div className="lg:hidden">

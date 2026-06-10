@@ -1,14 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Mail,
-  Smartphone,
-  Globe,
-  Wallet,
-  User,
-  Server,
-} from "lucide-react";
+import { Mail, Smartphone, Globe, Wallet, User, Server } from "lucide-react";
 
 const nodes = [
   {
@@ -98,7 +91,7 @@ export default function IdentifierTracingAnimation() {
           w-36
           h-36
           rounded-full
-          bg-gradient-to-br
+          bg-linear-to-br
           from-blue-500
           to-indigo-700
           flex
@@ -109,9 +102,7 @@ export default function IdentifierTracingAnimation() {
       >
         <div className="text-center">
           <div className="text-4xl mb-2">◎</div>
-          <div className="text-xs tracking-widest text-white">
-            INTELLIGENCE
-          </div>
+          <div className="text-xs tracking-widest text-white">INTELLIGENCE</div>
         </div>
       </motion.div>
 
@@ -186,14 +177,9 @@ export default function IdentifierTracingAnimation() {
                 justify-center
               "
             >
-              <Icon
-                size={24}
-                className="text-blue-400 mb-1"
-              />
+              <Icon size={24} className="text-blue-400 mb-1" />
 
-              <span className="text-[10px] text-blue-100">
-                {node.label}
-              </span>
+              <span className="text-[10px] text-blue-100">{node.label}</span>
             </motion.div>
           </motion.div>
         );

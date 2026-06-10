@@ -40,7 +40,6 @@ const nodes = [
 export default function DomainIntelligenceVisual() {
   return (
     <div className="relative h-[550px] w-full overflow-hidden rounded-3xl ">
-
       {/* Grid */}
       <div
         className="
@@ -122,14 +121,8 @@ export default function DomainIntelligenceVisual() {
         <motion.div
           key={i}
           animate={{
-            x:
-              i % 2 === 0
-                ? [0, 180]
-                : [0, -180],
-            y:
-              i < 2
-                ? [0, -120]
-                : [0, 120],
+            x: i % 2 === 0 ? [0, 180] : [0, -180],
+            y: i < 2 ? [0, -120] : [0, 120],
           }}
           transition={{
             repeat: Infinity,
@@ -175,26 +168,19 @@ export default function DomainIntelligenceVisual() {
             items-center
             justify-center
             rounded-full
-            bg-gradient-to-br
+            bg-linear-to-br
             from-blue-500
             to-indigo-700
             shadow-[0_0_60px_rgba(59,130,246,.6)]
           "
         >
-          <Globe
-            size={52}
-            className="text-white"
-          />
+          <Globe size={52} className="text-white" />
         </div>
 
         <div className="mt-4 text-center">
-          <div className="text-sm font-semibold text-white">
-            DOMAIN
-          </div>
+          <div className="text-sm font-semibold text-white">DOMAIN</div>
 
-          <div className="text-xs text-blue-300">
-            Intelligence Core
-          </div>
+          <div className="text-xs text-blue-300">Intelligence Core</div>
         </div>
       </motion.div>
 
@@ -234,14 +220,9 @@ export default function DomainIntelligenceVisual() {
                 backdrop-blur-xl
               "
             >
-              <Icon
-                size={26}
-                className="mb-2 text-blue-400"
-              />
+              <Icon size={26} className="mb-2 text-blue-400" />
 
-              <span className="text-xs text-white">
-                {node.label}
-              </span>
+              <span className="text-xs text-white">{node.label}</span>
             </div>
           </motion.div>
         );
@@ -302,6 +283,7 @@ export default function DomainIntelligenceVisual() {
           -translate-x-1/2
           -translate-y-1/2
           rounded-full
+          -z-10
         "
       >
         <div
@@ -332,10 +314,7 @@ export default function DomainIntelligenceVisual() {
         }}
         className="absolute right-10 top-10"
       >
-        <Network
-          size={42}
-          className="text-blue-500/30"
-        />
+        <Network size={42} className="text-blue-500/30" />
       </motion.div>
     </div>
   );
