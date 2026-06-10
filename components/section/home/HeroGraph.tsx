@@ -9,25 +9,25 @@ import HeroInput from "./HeroInput";
    ═══════════════════════════════════════════════════════════ */
 const BREAKPOINTS = {
   phone: {
-    ROOT_W: 130,
+    ROOT_W: 80,
     ROOT_H: 50,
-    L1_W: 125,
+    L1_W: 110,
     L1_H: 29,
-    L2_W: 120,
+    L2_W: 110,
     L2_H: 27,
-    L3_W: 85,
+    L3_W: 80,
     L3_H: 20,
-    ROOT_FS: 14,
-    L1_FS: 13,
-    L2_FS: 13,
-    L3_FS: 12,
+    ROOT_FS: 10,
+    L1_FS: 10,
+    L2_FS: 10,
+    L3_FS: 10,
     L1_GAP: 15,
     L2_GAP: 8,
     L3_GAP: 10,
-    ROOT_X: 20,
-    L1_X: 160,
-    L2_X: 289,
-    L3_X: 400,
+    ROOT_X: 65,
+    L1_X: 170,
+    L2_X: 290,
+    L3_X: 394,
     DOT_R: 2,
   },
   tablet: {
@@ -557,13 +557,12 @@ export default function MRMHero() {
                 height={ROOT_H}
                 rx={6}
                 fill="rgba(99,179,237,0.15)"
-                // stroke="#63B3ED"
+               
                 stroke="#7cc6fc"
                 strokeWidth={2}
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, ease: "backOut" }}
-                // className="hidden md:flex"
               />
               <motion.rect
                 x={ROOT_X - ROOT_W / 2 - 5}
@@ -572,7 +571,6 @@ export default function MRMHero() {
                 height={ROOT_H + 10}
                 rx={8}
                 fill="none"
-                // stroke="#63B3ED"
                 stroke="#7cc6fc"
                 strokeWidth={1}
                 strokeOpacity={0.3}
@@ -588,7 +586,6 @@ export default function MRMHero() {
                 fontSize={ROOT_FS}
                 fontFamily="'JetBrains Mono',monospace"
                 fontWeight="700"
-                className="text-[10px] md:text-xl lg:text-4xl"
               >
                 MRM
               </text>
@@ -600,7 +597,6 @@ export default function MRMHero() {
                 fontSize={ROOT_FS}
                 fontFamily="'JetBrains Mono',monospace"
                 fontWeight="700"
-                className="text-[10px] md:text-xl lg:text-3xl"
               >
                 Intelligence
               </text>
